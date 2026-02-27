@@ -1,0 +1,51 @@
+name: VTOP Academic Calendar Scraper
+
+# This decides when the script runs
+on:
+  schedule:
+    # Runs automatically at midnight every Sunday. 
+    # (You can change this cron schedule to whatever you prefer)
+    - cron: '0 */12 * * *' 
+  workflow_dispatch: # This allows you to click a "Run Workflow" button manually
+
+# Gives the Action permission to push the JSON file back to your repo
+permissions:
+  contents: write
+
+jobs:
+  scrape-calendar:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Grab your code from the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Install NPM Packages
+      - name: Install Dependencies
+        # If you don't have a package.json committed, this installs exactly what you need
+        run: npm install
+
+      # 4. Run the Scraper Script
+      - name: Run Scraper
+        env:
+          # Pulls the credentials securely from GitHub Secrets
+          VTOP_REGNO: ${{ secrets.VTOP_REGNO }}
+          VTOP_PASSWORD: ${{ secrets.VTOP_PASSWORD }}
+        run: node scraper.js
+
+      # 5. Commit and Push the generated JSON back to the Repo
+      - name: Commit and Push Calendar Data
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add calendars/
+          # This checks if any files actually changed. If yes, it commits and pushes. If no, it skips cleanly.
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: Auto-update VTOP academic calendar" && git push)
+          git push
