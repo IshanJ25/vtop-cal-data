@@ -2,8 +2,8 @@
   "metadata": {
     "semester": "Winter",
     "year": "2025",
-    "generatedAt": "2026-03-01T12:51:17.862Z",
-    "totalInstructionalDays": 70
+    "generatedAt": "2026-03-01T16:08:25.658Z",
+    "totalInstructionalDays": 74
   },
   "data": {
     "2025-12": [
@@ -223,18 +223,18 @@
         "date": "2026-01-05",
         "dayOfWeek": 1,
         "type": "Instructional",
-        "note": "First Instructional Day"
+        "note": null
       },
       {
         "date": "2026-01-06",
         "dayOfWeek": 2,
         "type": "Instructional",
-        "note": "Monday Order"
+        "note": null
       },
       {
         "date": "2026-01-07",
         "dayOfWeek": 3,
-        "type": "Holiday",
+        "type": "Instructional",
         "note": null
       },
       {
@@ -253,12 +253,12 @@
         "date": "2026-01-10",
         "dayOfWeek": 6,
         "type": "Instructional",
-        "note": null
+        "note": "Thursday Order"
       },
       {
         "date": "2026-01-11",
         "dayOfWeek": 7,
-        "type": "Instructional",
+        "type": "Holiday",
         "note": null
       },
       {
@@ -271,37 +271,37 @@
         "date": "2026-01-13",
         "dayOfWeek": 2,
         "type": "Instructional",
-        "note": "Thursday Order"
+        "note": null
       },
       {
         "date": "2026-01-14",
         "dayOfWeek": 3,
-        "type": "Holiday",
+        "type": "Instructional",
         "note": null
       },
       {
         "date": "2026-01-15",
         "dayOfWeek": 4,
-        "type": "Instructional",
-        "note": null
+        "type": "Holiday",
+        "note": "Pongal Holidays"
       },
       {
         "date": "2026-01-16",
         "dayOfWeek": 5,
-        "type": "Instructional",
-        "note": null
+        "type": "Holiday",
+        "note": "Pongal Holidays"
       },
       {
         "date": "2026-01-17",
         "dayOfWeek": 6,
-        "type": "Instructional",
-        "note": null
+        "type": "Holiday",
+        "note": "Pongal Holidays"
       },
       {
         "date": "2026-01-18",
         "dayOfWeek": 7,
-        "type": "Instructional",
-        "note": null
+        "type": "Holiday",
+        "note": "Pongal Holidays"
       },
       {
         "date": "2026-01-19",
@@ -313,111 +313,111 @@
         "date": "2026-01-20",
         "dayOfWeek": 2,
         "type": "Instructional",
-        "note": "Wednesday Order"
+        "note": null
       },
       {
         "date": "2026-01-21",
         "dayOfWeek": 3,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-01-22",
         "dayOfWeek": 4,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-01-23",
         "dayOfWeek": 5,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-01-24",
         "dayOfWeek": 6,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": "Friday Order"
       },
       {
         "date": "2026-01-25",
         "dayOfWeek": 7,
         "type": "Holiday",
-        "note": "Winter Vacation"
+        "note": null
       },
       {
         "date": "2026-01-26",
         "dayOfWeek": 1,
         "type": "Holiday",
-        "note": "Winter Vacation"
+        "note": "Republic Day"
       },
       {
         "date": "2026-01-27",
         "dayOfWeek": 2,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "CAT-1",
+        "note": "Exam Day"
       },
       {
         "date": "2026-01-28",
         "dayOfWeek": 3,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "CAT-1",
+        "note": "Exam Day"
       },
       {
         "date": "2026-01-29",
         "dayOfWeek": 4,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "CAT-1",
+        "note": "Exam Day"
       },
       {
         "date": "2026-01-30",
         "dayOfWeek": 5,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "CAT-1",
+        "note": "Exam Day"
       },
       {
         "date": "2026-01-31",
         "dayOfWeek": 6,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "CAT-1",
+        "note": "Exam Day"
       }
     ],
     "2026-02": [
       {
         "date": "2026-02-01",
         "dayOfWeek": 7,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "CAT-1",
+        "note": "Exam Day"
       },
       {
         "date": "2026-02-02",
         "dayOfWeek": 1,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "CAT-1",
+        "note": "Exam Day"
       },
       {
         "date": "2026-02-03",
         "dayOfWeek": 2,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-02-04",
         "dayOfWeek": 3,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-02-05",
         "dayOfWeek": 4,
         "type": "Instructional",
-        "note": "First Instructional Day"
+        "note": null
       },
       {
         "date": "2026-02-06",
         "dayOfWeek": 5,
         "type": "Instructional",
-        "note": "Monday Order"
+        "note": null
       },
       {
         "date": "2026-02-07",
@@ -428,7 +428,7 @@
       {
         "date": "2026-02-08",
         "dayOfWeek": 7,
-        "type": "Instructional",
+        "type": "Holiday",
         "note": null
       },
       {
@@ -459,18 +459,18 @@
         "date": "2026-02-13",
         "dayOfWeek": 5,
         "type": "Instructional",
-        "note": "Thursday Order"
+        "note": null
       },
       {
         "date": "2026-02-14",
         "dayOfWeek": 6,
-        "type": "Holiday",
-        "note": null
+        "type": "Instructional",
+        "note": "Monday Order"
       },
       {
         "date": "2026-02-15",
         "dayOfWeek": 7,
-        "type": "Instructional",
+        "type": "Holiday",
         "note": null
       },
       {
@@ -501,55 +501,55 @@
         "date": "2026-02-20",
         "dayOfWeek": 5,
         "type": "Instructional",
-        "note": "Wednesday Order"
+        "note": null
       },
       {
         "date": "2026-02-21",
         "dayOfWeek": 6,
         "type": "Holiday",
-        "note": "Winter Vacation"
+        "note": null
       },
       {
         "date": "2026-02-22",
         "dayOfWeek": 7,
         "type": "Holiday",
-        "note": "Winter Vacation"
+        "note": null
       },
       {
         "date": "2026-02-23",
         "dayOfWeek": 1,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-02-24",
         "dayOfWeek": 2,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-02-25",
         "dayOfWeek": 3,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-02-26",
         "dayOfWeek": 4,
         "type": "Holiday",
-        "note": "Winter Vacation"
+        "note": "Riviera 2026"
       },
       {
         "date": "2026-02-27",
         "dayOfWeek": 5,
         "type": "Holiday",
-        "note": "Winter Vacation"
+        "note": "Riviera 2026"
       },
       {
         "date": "2026-02-28",
         "dayOfWeek": 6,
         "type": "Holiday",
-        "note": "Winter Vacation"
+        "note": "Riviera 2026"
       }
     ],
     "2026-03": [
@@ -557,37 +557,37 @@
         "date": "2026-03-01",
         "dayOfWeek": 7,
         "type": "Holiday",
-        "note": "Winter Vacation"
+        "note": "Riviera 2026"
       },
       {
         "date": "2026-03-02",
         "dayOfWeek": 1,
         "type": "Holiday",
-        "note": "Winter Vacation"
+        "note": null
       },
       {
         "date": "2026-03-03",
         "dayOfWeek": 2,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-03-04",
         "dayOfWeek": 3,
         "type": "Holiday",
-        "note": "Winter Vacation"
+        "note": "Holi"
       },
       {
         "date": "2026-03-05",
         "dayOfWeek": 4,
         "type": "Instructional",
-        "note": "First Instructional Day"
+        "note": null
       },
       {
         "date": "2026-03-06",
         "dayOfWeek": 5,
         "type": "Instructional",
-        "note": "Monday Order"
+        "note": null
       },
       {
         "date": "2026-03-07",
@@ -598,7 +598,7 @@
       {
         "date": "2026-03-08",
         "dayOfWeek": 7,
-        "type": "Instructional",
+        "type": "Holiday",
         "note": null
       },
       {
@@ -629,7 +629,7 @@
         "date": "2026-03-13",
         "dayOfWeek": 5,
         "type": "Instructional",
-        "note": "Thursday Order"
+        "note": null
       },
       {
         "date": "2026-03-14",
@@ -640,147 +640,147 @@
       {
         "date": "2026-03-15",
         "dayOfWeek": 7,
-        "type": "Instructional",
-        "note": null
+        "type": "CAT-2",
+        "note": "Exam Day"
       },
       {
         "date": "2026-03-16",
         "dayOfWeek": 1,
-        "type": "Instructional",
-        "note": null
+        "type": "CAT-2",
+        "note": "Exam Day"
       },
       {
         "date": "2026-03-17",
         "dayOfWeek": 2,
-        "type": "Instructional",
-        "note": null
+        "type": "CAT-2",
+        "note": "Exam Day"
       },
       {
         "date": "2026-03-18",
         "dayOfWeek": 3,
-        "type": "Instructional",
-        "note": null
+        "type": "CAT-2",
+        "note": "Exam Day"
       },
       {
         "date": "2026-03-19",
         "dayOfWeek": 4,
-        "type": "Instructional",
-        "note": null
+        "type": "Holiday",
+        "note": "Telugu New Year’s Day"
       },
       {
         "date": "2026-03-20",
         "dayOfWeek": 5,
-        "type": "Instructional",
-        "note": "Wednesday Order"
+        "type": "CAT-2",
+        "note": "Exam Day"
       },
       {
         "date": "2026-03-21",
         "dayOfWeek": 6,
         "type": "Holiday",
-        "note": "Winter Vacation"
+        "note": "Ramzan"
       },
       {
         "date": "2026-03-22",
         "dayOfWeek": 7,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "CAT-2",
+        "note": "Exam Day"
       },
       {
         "date": "2026-03-23",
         "dayOfWeek": 1,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "CAT-2",
+        "note": "Exam Day"
       },
       {
         "date": "2026-03-24",
         "dayOfWeek": 2,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-03-25",
         "dayOfWeek": 3,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-03-26",
         "dayOfWeek": 4,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-03-27",
         "dayOfWeek": 5,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-03-28",
         "dayOfWeek": 6,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": "Friday Order"
       },
       {
         "date": "2026-03-29",
         "dayOfWeek": 7,
         "type": "Holiday",
-        "note": "Winter Vacation"
+        "note": null
       },
       {
         "date": "2026-03-30",
         "dayOfWeek": 1,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-03-31",
         "dayOfWeek": 2,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       }
     ],
     "2026-04": [
       {
         "date": "2026-04-01",
         "dayOfWeek": 3,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-04-02",
         "dayOfWeek": 4,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": "Instructional",
+        "note": null
       },
       {
         "date": "2026-04-03",
         "dayOfWeek": 5,
         "type": "Holiday",
-        "note": "Winter Vacation"
+        "note": "Good Friday"
       },
       {
         "date": "2026-04-04",
         "dayOfWeek": 6,
         "type": "Holiday",
-        "note": "Winter Vacation"
+        "note": null
       },
       {
         "date": "2026-04-05",
         "dayOfWeek": 7,
-        "type": "Instructional",
-        "note": "First Instructional Day"
+        "type": "Holiday",
+        "note": null
       },
       {
         "date": "2026-04-06",
         "dayOfWeek": 1,
         "type": "Instructional",
-        "note": "Monday Order"
+        "note": null
       },
       {
         "date": "2026-04-07",
         "dayOfWeek": 2,
-        "type": "Holiday",
+        "type": "Instructional",
         "note": null
       },
       {
@@ -799,31 +799,31 @@
         "date": "2026-04-10",
         "dayOfWeek": 5,
         "type": "Instructional",
-        "note": null
+        "note": "Last Instructional Day for Laboratory Classes"
       },
       {
         "date": "2026-04-11",
         "dayOfWeek": 6,
         "type": "Instructional",
-        "note": null
+        "note": "Tuesday Order"
       },
       {
         "date": "2026-04-12",
         "dayOfWeek": 7,
-        "type": "Instructional",
+        "type": "Holiday",
         "note": null
       },
       {
         "date": "2026-04-13",
         "dayOfWeek": 1,
         "type": "Instructional",
-        "note": "Thursday Order"
+        "note": null
       },
       {
         "date": "2026-04-14",
         "dayOfWeek": 2,
         "type": "Holiday",
-        "note": null
+        "note": "Tamil New Year’s Day"
       },
       {
         "date": "2026-04-15",
@@ -841,91 +841,83 @@
         "date": "2026-04-17",
         "dayOfWeek": 5,
         "type": "Instructional",
-        "note": null
+        "note": "Last Instructional Day for Theory Classes"
       },
       {
         "date": "2026-04-18",
         "dayOfWeek": 6,
-        "type": "Instructional",
-        "note": null
+        "type": null,
+        "note": "FAT Exams (Refer to schedule)"
       },
       {
         "date": "2026-04-19",
         "dayOfWeek": 7,
-        "type": "Instructional",
-        "note": null
+        "type": null,
+        "note": "FAT Exams (Refer to schedule)"
       },
       {
         "date": "2026-04-20",
         "dayOfWeek": 1,
-        "type": "Instructional",
-        "note": "Wednesday Order"
+        "type": null,
+        "note": "FAT Exams (Refer to schedule)"
       },
       {
         "date": "2026-04-21",
         "dayOfWeek": 2,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": null,
+        "note": "FAT Exams (Refer to schedule)"
       },
       {
         "date": "2026-04-22",
         "dayOfWeek": 3,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": null,
+        "note": "FAT Exams (Refer to schedule)"
       },
       {
         "date": "2026-04-23",
         "dayOfWeek": 4,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": null,
+        "note": "FAT Exams (Refer to schedule)"
       },
       {
         "date": "2026-04-24",
         "dayOfWeek": 5,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": null,
+        "note": "FAT Exams (Refer to schedule)"
       },
       {
         "date": "2026-04-25",
         "dayOfWeek": 6,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": null,
+        "note": "FAT Exams (Refer to schedule)"
       },
       {
         "date": "2026-04-26",
         "dayOfWeek": 7,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": null,
+        "note": "FAT Exams (Refer to schedule)"
       },
       {
         "date": "2026-04-27",
         "dayOfWeek": 1,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": null,
+        "note": "FAT Exams (Refer to schedule)"
       },
       {
         "date": "2026-04-28",
         "dayOfWeek": 2,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": null,
+        "note": "FAT Exams (Refer to schedule)"
       },
       {
         "date": "2026-04-29",
         "dayOfWeek": 3,
-        "type": "Holiday",
-        "note": "Winter Vacation"
+        "type": null,
+        "note": "FAT Exams (Refer to schedule)"
       },
       {
         "date": "2026-04-30",
         "dayOfWeek": 4,
-        "type": "Holiday",
-        "note": "Winter Vacation"
-      }
-    ],
-    "2026-05": [
-      {
-        "date": "2026-05-01",
-        "dayOfWeek": 5,
         "type": null,
         "note": "FAT Exams (Refer to schedule)"
       }
