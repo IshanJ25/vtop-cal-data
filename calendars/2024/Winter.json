@@ -1,1090 +1,1076 @@
 {
   "metadata": {
-    "semester": "Fall",
-    "year": "2025",
-    "generatedAt": "2026-03-21::22:20:44",
-    "totalInstructionalDays": 75,
-    "firstInstructionalDay": "2025-07-09",
-    "lastTheoryInstructionalDay": "2025-11-14",
-    "lastLabInstructionalDay": "2025-11-07"
+    "semester": "Winter",
+    "year": "2024",
+    "generatedAt": "2026-03-21::22:22:09",
+    "totalInstructionalDays": 72,
+    "firstInstructionalDay": "2024-12-13",
+    "lastTheoryInstructionalDay": "2025-04-17",
+    "lastLabInstructionalDay": "2025-04-05"
   },
   "data": {
-    "2025-07": [
+    "2024-12": [
       {
-        "date": "2025-07-01",
-        "dayOfWeek": 2,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-07-02",
-        "dayOfWeek": 3,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-07-03",
-        "dayOfWeek": 4,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-07-04",
-        "dayOfWeek": 5,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-07-05",
-        "dayOfWeek": 6,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-07-06",
+        "date": "2024-12-01",
         "dayOfWeek": 7,
         "type": "Holiday",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-07-07",
+        "date": "2024-12-02",
         "dayOfWeek": 1,
         "type": "Holiday",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-07-08",
+        "date": "2024-12-03",
         "dayOfWeek": 2,
         "type": "Holiday",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-07-09",
+        "date": "2024-12-04",
         "dayOfWeek": 3,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2024-12-05",
+        "dayOfWeek": 4,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2024-12-06",
+        "dayOfWeek": 5,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2024-12-07",
+        "dayOfWeek": 6,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2024-12-08",
+        "dayOfWeek": 7,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2024-12-09",
+        "dayOfWeek": 1,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2024-12-10",
+        "dayOfWeek": 2,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2024-12-11",
+        "dayOfWeek": 3,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2024-12-12",
+        "dayOfWeek": 4,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2024-12-13",
+        "dayOfWeek": 5,
         "type": "Instructional",
-        "dayOrder": 3,
+        "dayOrder": 5,
         "note": "First Instructional Day"
       },
       {
-        "date": "2025-07-10",
-        "dayOfWeek": 4,
-        "type": "Instructional",
-        "dayOrder": 4,
-        "note": null
-      },
-      {
-        "date": "2025-07-11",
-        "dayOfWeek": 5,
-        "type": "Instructional",
-        "dayOrder": 5,
-        "note": null
-      },
-      {
-        "date": "2025-07-12",
+        "date": "2024-12-14",
         "dayOfWeek": 6,
-        "type": "Holiday",
-        "dayOrder": 0,
+        "type": "Instructional",
+        "dayOrder": 1,
         "note": null
       },
       {
-        "date": "2025-07-13",
+        "date": "2024-12-15",
         "dayOfWeek": 7,
         "type": "Holiday",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-07-14",
+        "date": "2024-12-16",
         "dayOfWeek": 1,
         "type": "Instructional",
         "dayOrder": 1,
         "note": null
       },
       {
-        "date": "2025-07-15",
+        "date": "2024-12-17",
         "dayOfWeek": 2,
         "type": "Instructional",
         "dayOrder": 2,
         "note": null
       },
       {
-        "date": "2025-07-16",
+        "date": "2024-12-18",
         "dayOfWeek": 3,
         "type": "Instructional",
         "dayOrder": 3,
         "note": null
       },
       {
-        "date": "2025-07-17",
+        "date": "2024-12-19",
         "dayOfWeek": 4,
         "type": "Instructional",
         "dayOrder": 4,
         "note": null
       },
       {
-        "date": "2025-07-18",
+        "date": "2024-12-20",
         "dayOfWeek": 5,
         "type": "Instructional",
         "dayOrder": 5,
         "note": null
       },
       {
-        "date": "2025-07-19",
+        "date": "2024-12-21",
         "dayOfWeek": 6,
-        "type": "Instructional",
-        "dayOrder": 5,
-        "note": null
-      },
-      {
-        "date": "2025-07-20",
-        "dayOfWeek": 7,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-07-21",
-        "dayOfWeek": 1,
-        "type": "Instructional",
-        "dayOrder": 1,
-        "note": null
-      },
-      {
-        "date": "2025-07-22",
-        "dayOfWeek": 2,
         "type": "Instructional",
         "dayOrder": 2,
         "note": null
       },
       {
-        "date": "2025-07-23",
+        "date": "2024-12-22",
+        "dayOfWeek": 7,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Winter Vacation"
+      },
+      {
+        "date": "2024-12-23",
+        "dayOfWeek": 1,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Winter Vacation"
+      },
+      {
+        "date": "2024-12-24",
+        "dayOfWeek": 2,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Winter Vacation"
+      },
+      {
+        "date": "2024-12-25",
         "dayOfWeek": 3,
-        "type": "Instructional",
-        "dayOrder": 3,
-        "note": null
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Winter Vacation"
       },
       {
-        "date": "2025-07-24",
+        "date": "2024-12-26",
         "dayOfWeek": 4,
-        "type": "Instructional",
-        "dayOrder": 4,
-        "note": null
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Winter Vacation"
       },
       {
-        "date": "2025-07-25",
+        "date": "2024-12-27",
         "dayOfWeek": 5,
-        "type": "Instructional",
-        "dayOrder": 5,
-        "note": null
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Winter Vacation"
       },
       {
-        "date": "2025-07-26",
+        "date": "2024-12-28",
         "dayOfWeek": 6,
         "type": "Holiday",
         "dayOrder": 0,
-        "note": null
+        "note": "Winter Vacation"
       },
       {
-        "date": "2025-07-27",
+        "date": "2024-12-29",
         "dayOfWeek": 7,
         "type": "Holiday",
         "dayOrder": 0,
-        "note": null
+        "note": "Winter Vacation"
       },
       {
-        "date": "2025-07-28",
+        "date": "2024-12-30",
         "dayOfWeek": 1,
-        "type": "Instructional",
-        "dayOrder": 1,
-        "note": null
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Winter Vacation"
       },
       {
-        "date": "2025-07-29",
+        "date": "2024-12-31",
         "dayOfWeek": 2,
-        "type": "Instructional",
-        "dayOrder": 2,
-        "note": null
-      },
-      {
-        "date": "2025-07-30",
-        "dayOfWeek": 3,
-        "type": "Instructional",
-        "dayOrder": 3,
-        "note": null
-      },
-      {
-        "date": "2025-07-31",
-        "dayOfWeek": 4,
-        "type": "Instructional",
-        "dayOrder": 4,
-        "note": null
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Winter Vacation"
       }
     ],
-    "2025-08": [
+    "2025-01": [
       {
-        "date": "2025-08-01",
-        "dayOfWeek": 5,
-        "type": "Instructional",
-        "dayOrder": 5,
-        "note": null
-      },
-      {
-        "date": "2025-08-02",
-        "dayOfWeek": 6,
-        "type": "Instructional",
-        "dayOrder": 5,
-        "note": null
-      },
-      {
-        "date": "2025-08-03",
-        "dayOfWeek": 7,
+        "date": "2025-01-01",
+        "dayOfWeek": 3,
         "type": "Holiday",
         "dayOrder": 0,
-        "note": null
+        "note": "Winter Vacation"
       },
       {
-        "date": "2025-08-04",
-        "dayOfWeek": 1,
-        "type": "Instructional",
-        "dayOrder": 1,
-        "note": null
-      },
-      {
-        "date": "2025-08-05",
-        "dayOfWeek": 2,
-        "type": "Instructional",
-        "dayOrder": 2,
-        "note": null
-      },
-      {
-        "date": "2025-08-06",
-        "dayOfWeek": 3,
-        "type": "Instructional",
-        "dayOrder": 3,
-        "note": null
-      },
-      {
-        "date": "2025-08-07",
+        "date": "2025-01-02",
         "dayOfWeek": 4,
         "type": "Instructional",
         "dayOrder": 4,
         "note": null
       },
       {
-        "date": "2025-08-08",
+        "date": "2025-01-03",
         "dayOfWeek": 5,
         "type": "Instructional",
         "dayOrder": 5,
         "note": null
       },
       {
-        "date": "2025-08-09",
+        "date": "2025-01-04",
         "dayOfWeek": 6,
-        "type": "Holiday",
-        "dayOrder": 0,
+        "type": "Instructional",
+        "dayOrder": 3,
         "note": null
       },
       {
-        "date": "2025-08-10",
+        "date": "2025-01-05",
         "dayOfWeek": 7,
         "type": "Holiday",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-08-11",
+        "date": "2025-01-06",
         "dayOfWeek": 1,
         "type": "Instructional",
         "dayOrder": 1,
         "note": null
       },
       {
-        "date": "2025-08-12",
+        "date": "2025-01-07",
         "dayOfWeek": 2,
         "type": "Instructional",
         "dayOrder": 2,
         "note": null
       },
       {
-        "date": "2025-08-13",
+        "date": "2025-01-08",
         "dayOfWeek": 3,
         "type": "Instructional",
         "dayOrder": 3,
         "note": null
       },
       {
-        "date": "2025-08-14",
+        "date": "2025-01-09",
         "dayOfWeek": 4,
         "type": "Instructional",
         "dayOrder": 4,
         "note": null
       },
       {
-        "date": "2025-08-15",
-        "dayOfWeek": 5,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Independence Day"
-      },
-      {
-        "date": "2025-08-16",
-        "dayOfWeek": 6,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-08-17",
-        "dayOfWeek": 7,
-        "type": "CAT-1",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-08-18",
-        "dayOfWeek": 1,
-        "type": "CAT-1",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-08-19",
-        "dayOfWeek": 2,
-        "type": "CAT-1",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-08-20",
-        "dayOfWeek": 3,
-        "type": "CAT-1",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-08-21",
-        "dayOfWeek": 4,
-        "type": "CAT-1",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-08-22",
-        "dayOfWeek": 5,
-        "type": "CAT-1",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-08-23",
-        "dayOfWeek": 6,
-        "type": "CAT-1",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-08-24",
-        "dayOfWeek": 7,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-08-25",
-        "dayOfWeek": 1,
-        "type": "Instructional",
-        "dayOrder": 1,
-        "note": null
-      },
-      {
-        "date": "2025-08-26",
-        "dayOfWeek": 2,
-        "type": "Instructional",
-        "dayOrder": 2,
-        "note": null
-      },
-      {
-        "date": "2025-08-27",
-        "dayOfWeek": 3,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Vinayakar Chathurthi"
-      },
-      {
-        "date": "2025-08-28",
-        "dayOfWeek": 4,
-        "type": "Instructional",
-        "dayOrder": 4,
-        "note": null
-      },
-      {
-        "date": "2025-08-29",
+        "date": "2025-01-10",
         "dayOfWeek": 5,
         "type": "Instructional",
         "dayOrder": 5,
         "note": null
       },
       {
-        "date": "2025-08-30",
+        "date": "2025-01-11",
         "dayOfWeek": 6,
+        "type": "Instructional",
+        "dayOrder": 4,
+        "note": null
+      },
+      {
+        "date": "2025-01-12",
+        "dayOfWeek": 7,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-01-13",
+        "dayOfWeek": 1,
+        "type": "Instructional",
+        "dayOrder": 1,
+        "note": null
+      },
+      {
+        "date": "2025-01-14",
+        "dayOfWeek": 2,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Pongal Holidays"
+      },
+      {
+        "date": "2025-01-15",
+        "dayOfWeek": 3,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Pongal Holidays"
+      },
+      {
+        "date": "2025-01-16",
+        "dayOfWeek": 4,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Pongal Holidays"
+      },
+      {
+        "date": "2025-01-17",
+        "dayOfWeek": 5,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Pongal Holidays"
+      },
+      {
+        "date": "2025-01-18",
+        "dayOfWeek": 6,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-01-19",
+        "dayOfWeek": 7,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-01-20",
+        "dayOfWeek": 1,
+        "type": "Instructional",
+        "dayOrder": 1,
+        "note": null
+      },
+      {
+        "date": "2025-01-21",
+        "dayOfWeek": 2,
+        "type": "Instructional",
+        "dayOrder": 2,
+        "note": null
+      },
+      {
+        "date": "2025-01-22",
+        "dayOfWeek": 3,
         "type": "Instructional",
         "dayOrder": 3,
         "note": null
       },
       {
-        "date": "2025-08-31",
+        "date": "2025-01-23",
+        "dayOfWeek": 4,
+        "type": "Instructional",
+        "dayOrder": 4,
+        "note": null
+      },
+      {
+        "date": "2025-01-24",
+        "dayOfWeek": 5,
+        "type": "Instructional",
+        "dayOrder": 5,
+        "note": null
+      },
+      {
+        "date": "2025-01-25",
+        "dayOfWeek": 6,
+        "type": "Instructional",
+        "dayOrder": 5,
+        "note": null
+      },
+      {
+        "date": "2025-01-26",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Republic Day"
+      },
+      {
+        "date": "2025-01-27",
+        "dayOfWeek": 1,
+        "type": "CAT-1",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-01-28",
+        "dayOfWeek": 2,
+        "type": "CAT-1",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-01-29",
+        "dayOfWeek": 3,
+        "type": "CAT-1",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-01-30",
+        "dayOfWeek": 4,
+        "type": "CAT-1",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-01-31",
+        "dayOfWeek": 5,
+        "type": "CAT-1",
         "dayOrder": 0,
         "note": null
       }
     ],
-    "2025-09": [
+    "2025-02": [
       {
-        "date": "2025-09-01",
-        "dayOfWeek": 1,
-        "type": "Instructional",
-        "dayOrder": 1,
-        "note": null
-      },
-      {
-        "date": "2025-09-02",
-        "dayOfWeek": 2,
-        "type": "Instructional",
-        "dayOrder": 2,
-        "note": null
-      },
-      {
-        "date": "2025-09-03",
-        "dayOfWeek": 3,
-        "type": "Instructional",
-        "dayOrder": 3,
-        "note": null
-      },
-      {
-        "date": "2025-09-04",
-        "dayOfWeek": 4,
-        "type": "Instructional",
-        "dayOrder": 4,
-        "note": null
-      },
-      {
-        "date": "2025-09-05",
-        "dayOfWeek": 5,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Meelad-un-Nabi"
-      },
-      {
-        "date": "2025-09-06",
+        "date": "2025-02-01",
         "dayOfWeek": 6,
-        "type": "Holiday",
+        "type": "CAT-1",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-09-07",
+        "date": "2025-02-02",
         "dayOfWeek": 7,
-        "type": "Holiday",
+        "type": "CAT-1",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-09-08",
+        "date": "2025-02-03",
         "dayOfWeek": 1,
         "type": "Instructional",
         "dayOrder": 1,
         "note": null
       },
       {
-        "date": "2025-09-09",
+        "date": "2025-02-04",
         "dayOfWeek": 2,
         "type": "Instructional",
         "dayOrder": 2,
         "note": null
       },
       {
-        "date": "2025-09-10",
+        "date": "2025-02-05",
         "dayOfWeek": 3,
         "type": "Instructional",
         "dayOrder": 3,
         "note": null
       },
       {
-        "date": "2025-09-11",
+        "date": "2025-02-06",
         "dayOfWeek": 4,
         "type": "Instructional",
         "dayOrder": 4,
         "note": null
       },
       {
-        "date": "2025-09-12",
+        "date": "2025-02-07",
         "dayOfWeek": 5,
         "type": "Instructional",
         "dayOrder": 5,
         "note": null
       },
       {
-        "date": "2025-09-13",
+        "date": "2025-02-08",
         "dayOfWeek": 6,
-        "type": "Holiday",
-        "dayOrder": 0,
+        "type": "Instructional",
+        "dayOrder": 5,
         "note": null
       },
       {
-        "date": "2025-09-14",
+        "date": "2025-02-09",
         "dayOfWeek": 7,
         "type": "Holiday",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-09-15",
+        "date": "2025-02-10",
         "dayOfWeek": 1,
         "type": "Instructional",
         "dayOrder": 1,
         "note": null
       },
       {
-        "date": "2025-09-16",
+        "date": "2025-02-11",
         "dayOfWeek": 2,
-        "type": "Instructional",
-        "dayOrder": 2,
-        "note": null
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Thai Poosam"
       },
       {
-        "date": "2025-09-17",
+        "date": "2025-02-12",
         "dayOfWeek": 3,
         "type": "Instructional",
         "dayOrder": 3,
         "note": null
       },
       {
-        "date": "2025-09-18",
+        "date": "2025-02-13",
         "dayOfWeek": 4,
         "type": "Instructional",
         "dayOrder": 4,
         "note": null
       },
       {
-        "date": "2025-09-19",
+        "date": "2025-02-14",
         "dayOfWeek": 5,
         "type": "Instructional",
         "dayOrder": 5,
         "note": null
       },
       {
-        "date": "2025-09-20",
+        "date": "2025-02-15",
         "dayOfWeek": 6,
-        "type": "Holiday",
-        "dayOrder": 0,
+        "type": "Instructional",
+        "dayOrder": 1,
         "note": null
       },
       {
-        "date": "2025-09-21",
+        "date": "2025-02-16",
         "dayOfWeek": 7,
         "type": "Holiday",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-09-22",
+        "date": "2025-02-17",
         "dayOfWeek": 1,
         "type": "Instructional",
         "dayOrder": 1,
         "note": null
       },
       {
-        "date": "2025-09-23",
+        "date": "2025-02-18",
         "dayOfWeek": 2,
         "type": "Instructional",
         "dayOrder": 2,
         "note": null
       },
       {
-        "date": "2025-09-24",
+        "date": "2025-02-19",
         "dayOfWeek": 3,
         "type": "Instructional",
         "dayOrder": 3,
         "note": null
       },
       {
-        "date": "2025-09-25",
-        "dayOfWeek": 4,
-        "type": "Instructional",
-        "dayOrder": 4,
-        "note": null
-      },
-      {
-        "date": "2025-09-26",
-        "dayOfWeek": 5,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Gravitas '25"
-      },
-      {
-        "date": "2025-09-27",
-        "dayOfWeek": 6,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Gravitas '25"
-      },
-      {
-        "date": "2025-09-28",
-        "dayOfWeek": 7,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Gravitas '25"
-      },
-      {
-        "date": "2025-09-29",
-        "dayOfWeek": 1,
-        "type": "Instructional",
-        "dayOrder": 1,
-        "note": null
-      },
-      {
-        "date": "2025-09-30",
-        "dayOfWeek": 2,
-        "type": "Instructional",
-        "dayOrder": 2,
-        "note": null
-      }
-    ],
-    "2025-10": [
-      {
-        "date": "2025-10-01",
-        "dayOfWeek": 3,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Ayutha Pooja"
-      },
-      {
-        "date": "2025-10-02",
+        "date": "2025-02-20",
         "dayOfWeek": 4,
         "type": "Holiday",
         "dayOrder": 0,
-        "note": "Gandhi Jayanthi"
+        "note": "Riviera 2025"
       },
       {
-        "date": "2025-10-03",
+        "date": "2025-02-21",
         "dayOfWeek": 5,
-        "type": "Instructional",
-        "dayOrder": 5,
-        "note": null
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Riviera 2025"
       },
       {
-        "date": "2025-10-04",
+        "date": "2025-02-22",
         "dayOfWeek": 6,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Riviera 2025"
+      },
+      {
+        "date": "2025-02-23",
+        "dayOfWeek": 7,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Riviera 2025"
+      },
+      {
+        "date": "2025-02-24",
+        "dayOfWeek": 1,
         "type": "Holiday",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-10-05",
-        "dayOfWeek": 7,
-        "type": "CAT-2",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-10-06",
-        "dayOfWeek": 1,
-        "type": "CAT-2",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-10-07",
-        "dayOfWeek": 2,
-        "type": "CAT-2",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-10-08",
-        "dayOfWeek": 3,
-        "type": "CAT-2",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-10-09",
-        "dayOfWeek": 4,
-        "type": "CAT-2",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-10-10",
-        "dayOfWeek": 5,
-        "type": "CAT-2",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-10-11",
-        "dayOfWeek": 6,
-        "type": "CAT-2",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-10-12",
-        "dayOfWeek": 7,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-10-13",
-        "dayOfWeek": 1,
-        "type": "Instructional",
-        "dayOrder": 1,
-        "note": null
-      },
-      {
-        "date": "2025-10-14",
+        "date": "2025-02-25",
         "dayOfWeek": 2,
         "type": "Instructional",
         "dayOrder": 2,
         "note": null
       },
       {
-        "date": "2025-10-15",
+        "date": "2025-02-26",
         "dayOfWeek": 3,
         "type": "Instructional",
         "dayOrder": 3,
         "note": null
       },
       {
-        "date": "2025-10-16",
+        "date": "2025-02-27",
         "dayOfWeek": 4,
         "type": "Instructional",
         "dayOrder": 4,
         "note": null
       },
       {
-        "date": "2025-10-17",
-        "dayOfWeek": 5,
-        "type": "Instructional",
-        "dayOrder": 5,
-        "note": null
-      },
-      {
-        "date": "2025-10-18",
-        "dayOfWeek": 6,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Deepavali"
-      },
-      {
-        "date": "2025-10-19",
-        "dayOfWeek": 7,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Deepavali"
-      },
-      {
-        "date": "2025-10-20",
-        "dayOfWeek": 1,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Deepavali"
-      },
-      {
-        "date": "2025-10-21",
-        "dayOfWeek": 2,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Deepavali"
-      },
-      {
-        "date": "2025-10-22",
-        "dayOfWeek": 3,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Deepavali"
-      },
-      {
-        "date": "2025-10-23",
-        "dayOfWeek": 4,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Deepavali"
-      },
-      {
-        "date": "2025-10-24",
-        "dayOfWeek": 5,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Deepavali"
-      },
-      {
-        "date": "2025-10-25",
-        "dayOfWeek": 6,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Deepavali"
-      },
-      {
-        "date": "2025-10-26",
-        "dayOfWeek": 7,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": "Deepavali"
-      },
-      {
-        "date": "2025-10-27",
-        "dayOfWeek": 1,
-        "type": "Instructional",
-        "dayOrder": 1,
-        "note": null
-      },
-      {
-        "date": "2025-10-28",
-        "dayOfWeek": 2,
-        "type": "Instructional",
-        "dayOrder": 2,
-        "note": null
-      },
-      {
-        "date": "2025-10-29",
-        "dayOfWeek": 3,
-        "type": "Instructional",
-        "dayOrder": 3,
-        "note": null
-      },
-      {
-        "date": "2025-10-30",
-        "dayOfWeek": 4,
-        "type": "Instructional",
-        "dayOrder": 4,
-        "note": null
-      },
-      {
-        "date": "2025-10-31",
+        "date": "2025-02-28",
         "dayOfWeek": 5,
         "type": "Instructional",
         "dayOrder": 5,
         "note": null
       }
     ],
-    "2025-11": [
+    "2025-03": [
       {
-        "date": "2025-11-01",
+        "date": "2025-03-01",
         "dayOfWeek": 6,
-        "type": "Holiday",
-        "dayOrder": 0,
+        "type": "Instructional",
+        "dayOrder": 2,
         "note": null
       },
       {
-        "date": "2025-11-02",
+        "date": "2025-03-02",
         "dayOfWeek": 7,
         "type": "Holiday",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-11-03",
+        "date": "2025-03-03",
         "dayOfWeek": 1,
         "type": "Instructional",
         "dayOrder": 1,
         "note": null
       },
       {
-        "date": "2025-11-04",
+        "date": "2025-03-04",
         "dayOfWeek": 2,
         "type": "Instructional",
         "dayOrder": 2,
         "note": null
       },
       {
-        "date": "2025-11-05",
+        "date": "2025-03-05",
         "dayOfWeek": 3,
         "type": "Instructional",
         "dayOrder": 3,
         "note": null
       },
       {
-        "date": "2025-11-06",
+        "date": "2025-03-06",
         "dayOfWeek": 4,
         "type": "Instructional",
         "dayOrder": 4,
         "note": null
       },
       {
-        "date": "2025-11-07",
+        "date": "2025-03-07",
         "dayOfWeek": 5,
         "type": "Instructional",
         "dayOrder": 5,
+        "note": null
+      },
+      {
+        "date": "2025-03-08",
+        "dayOfWeek": 6,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-03-09",
+        "dayOfWeek": 7,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-03-10",
+        "dayOfWeek": 1,
+        "type": "Instructional",
+        "dayOrder": 1,
+        "note": null
+      },
+      {
+        "date": "2025-03-11",
+        "dayOfWeek": 2,
+        "type": "Instructional",
+        "dayOrder": 2,
+        "note": null
+      },
+      {
+        "date": "2025-03-12",
+        "dayOfWeek": 3,
+        "type": "Instructional",
+        "dayOrder": 3,
+        "note": null
+      },
+      {
+        "date": "2025-03-13",
+        "dayOfWeek": 4,
+        "type": "Instructional",
+        "dayOrder": 4,
+        "note": null
+      },
+      {
+        "date": "2025-03-14",
+        "dayOfWeek": 5,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Holi"
+      },
+      {
+        "date": "2025-03-15",
+        "dayOfWeek": 6,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-03-16",
+        "dayOfWeek": 7,
+        "type": "CAT-2",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-03-17",
+        "dayOfWeek": 1,
+        "type": "CAT-2",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-03-18",
+        "dayOfWeek": 2,
+        "type": "CAT-2",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-03-19",
+        "dayOfWeek": 3,
+        "type": "CAT-2",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-03-20",
+        "dayOfWeek": 4,
+        "type": "CAT-2",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-03-21",
+        "dayOfWeek": 5,
+        "type": "CAT-2",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-03-22",
+        "dayOfWeek": 6,
+        "type": "CAT-2",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-03-23",
+        "dayOfWeek": 7,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-03-24",
+        "dayOfWeek": 1,
+        "type": "Instructional",
+        "dayOrder": 1,
+        "note": null
+      },
+      {
+        "date": "2025-03-25",
+        "dayOfWeek": 2,
+        "type": "Instructional",
+        "dayOrder": 2,
+        "note": null
+      },
+      {
+        "date": "2025-03-26",
+        "dayOfWeek": 3,
+        "type": "Instructional",
+        "dayOrder": 3,
+        "note": null
+      },
+      {
+        "date": "2025-03-27",
+        "dayOfWeek": 4,
+        "type": "Instructional",
+        "dayOrder": 4,
+        "note": null
+      },
+      {
+        "date": "2025-03-28",
+        "dayOfWeek": 5,
+        "type": "Instructional",
+        "dayOrder": 5,
+        "note": null
+      },
+      {
+        "date": "2025-03-29",
+        "dayOfWeek": 6,
+        "type": "Instructional",
+        "dayOrder": 1,
+        "note": null
+      },
+      {
+        "date": "2025-03-30",
+        "dayOfWeek": 7,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Telugu New Year’s Day"
+      },
+      {
+        "date": "2025-03-31",
+        "dayOfWeek": 1,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Ramzan"
+      }
+    ],
+    "2025-04": [
+      {
+        "date": "2025-04-01",
+        "dayOfWeek": 2,
+        "type": "Instructional",
+        "dayOrder": 2,
+        "note": null
+      },
+      {
+        "date": "2025-04-02",
+        "dayOfWeek": 3,
+        "type": "Instructional",
+        "dayOrder": 3,
+        "note": null
+      },
+      {
+        "date": "2025-04-03",
+        "dayOfWeek": 4,
+        "type": "Instructional",
+        "dayOrder": 4,
+        "note": null
+      },
+      {
+        "date": "2025-04-04",
+        "dayOfWeek": 5,
+        "type": "Instructional",
+        "dayOrder": 5,
+        "note": null
+      },
+      {
+        "date": "2025-04-05",
+        "dayOfWeek": 6,
+        "type": "Instructional",
+        "dayOrder": 0,
         "note": "Last Lab Instructional Day"
       },
       {
-        "date": "2025-11-08",
-        "dayOfWeek": 6,
-        "type": "Holiday",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-11-09",
+        "date": "2025-04-06",
         "dayOfWeek": 7,
         "type": "Holiday",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-11-10",
+        "date": "2025-04-07",
         "dayOfWeek": 1,
         "type": "Instructional",
         "dayOrder": 1,
         "note": null
       },
       {
-        "date": "2025-11-11",
+        "date": "2025-04-08",
         "dayOfWeek": 2,
         "type": "Instructional",
         "dayOrder": 2,
         "note": null
       },
       {
-        "date": "2025-11-12",
+        "date": "2025-04-09",
         "dayOfWeek": 3,
         "type": "Instructional",
         "dayOrder": 3,
         "note": null
       },
       {
-        "date": "2025-11-13",
+        "date": "2025-04-10",
         "dayOfWeek": 4,
         "type": "Instructional",
         "dayOrder": 4,
         "note": null
       },
       {
-        "date": "2025-11-14",
+        "date": "2025-04-11",
         "dayOfWeek": 5,
         "type": "Instructional",
         "dayOrder": 5,
+        "note": null
+      },
+      {
+        "date": "2025-04-12",
+        "dayOfWeek": 6,
+        "type": "Instructional",
+        "dayOrder": 2,
+        "note": null
+      },
+      {
+        "date": "2025-04-13",
+        "dayOfWeek": 7,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-04-14",
+        "dayOfWeek": 1,
+        "type": "Holiday",
+        "dayOrder": 0,
+        "note": "Tamil New Year’s Day"
+      },
+      {
+        "date": "2025-04-15",
+        "dayOfWeek": 2,
+        "type": "Instructional",
+        "dayOrder": 2,
+        "note": null
+      },
+      {
+        "date": "2025-04-16",
+        "dayOfWeek": 3,
+        "type": "Instructional",
+        "dayOrder": 3,
+        "note": null
+      },
+      {
+        "date": "2025-04-17",
+        "dayOfWeek": 4,
+        "type": "Instructional",
+        "dayOrder": 4,
         "note": "Last Theory Instructional Day"
       },
       {
-        "date": "2025-11-15",
-        "dayOfWeek": 6,
-        "type": "FAT",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-11-16",
-        "dayOfWeek": 7,
-        "type": "FAT",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-11-17",
-        "dayOfWeek": 1,
-        "type": "FAT",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-11-18",
-        "dayOfWeek": 2,
-        "type": "FAT",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-11-19",
-        "dayOfWeek": 3,
-        "type": "FAT",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-11-20",
-        "dayOfWeek": 4,
-        "type": "FAT",
-        "dayOrder": 0,
-        "note": null
-      },
-      {
-        "date": "2025-11-21",
+        "date": "2025-04-18",
         "dayOfWeek": 5,
         "type": "FAT",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-11-22",
+        "date": "2025-04-19",
         "dayOfWeek": 6,
         "type": "FAT",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-11-23",
+        "date": "2025-04-20",
         "dayOfWeek": 7,
         "type": "FAT",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-11-24",
+        "date": "2025-04-21",
         "dayOfWeek": 1,
         "type": "FAT",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-11-25",
+        "date": "2025-04-22",
         "dayOfWeek": 2,
         "type": "FAT",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-11-26",
+        "date": "2025-04-23",
         "dayOfWeek": 3,
         "type": "FAT",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-11-27",
+        "date": "2025-04-24",
         "dayOfWeek": 4,
         "type": "FAT",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-11-28",
+        "date": "2025-04-25",
         "dayOfWeek": 5,
         "type": "FAT",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-11-29",
+        "date": "2025-04-26",
         "dayOfWeek": 6,
         "type": "FAT",
         "dayOrder": 0,
         "note": null
       },
       {
-        "date": "2025-11-30",
+        "date": "2025-04-27",
         "dayOfWeek": 7,
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-04-28",
+        "dayOfWeek": 1,
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-04-29",
+        "dayOfWeek": 2,
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
+      },
+      {
+        "date": "2025-04-30",
+        "dayOfWeek": 3,
         "type": "FAT",
         "dayOrder": 0,
         "note": null

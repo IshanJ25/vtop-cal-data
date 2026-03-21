@@ -2,8 +2,11 @@
   "metadata": {
     "semester": "Winter",
     "year": "2025",
-    "generatedAt": "2026-03-21T02:00:57.325Z",
-    "totalInstructionalDays": 74
+    "generatedAt": "2026-03-21::22:24:59",
+    "totalInstructionalDays": 74,
+    "firstInstructionalDay": "2025-12-05",
+    "lastTheoryInstructionalDay": "2026-04-17",
+    "lastLabInstructionalDay": "2026-04-10"
   },
   "data": {
     "2025-12": [
@@ -11,186 +14,217 @@
         "date": "2025-12-01",
         "dayOfWeek": 1,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2025-12-02",
         "dayOfWeek": 2,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2025-12-03",
         "dayOfWeek": 3,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2025-12-04",
         "dayOfWeek": 4,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2025-12-05",
         "dayOfWeek": 5,
         "type": "Instructional",
+        "dayOrder": 5,
         "note": "First Instructional Day"
       },
       {
         "date": "2025-12-06",
         "dayOfWeek": 6,
         "type": "Instructional",
-        "note": "Monday Order"
+        "dayOrder": 1,
+        "note": null
       },
       {
         "date": "2025-12-07",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2025-12-08",
         "dayOfWeek": 1,
         "type": "Instructional",
+        "dayOrder": 1,
         "note": null
       },
       {
         "date": "2025-12-09",
         "dayOfWeek": 2,
         "type": "Instructional",
+        "dayOrder": 2,
         "note": null
       },
       {
         "date": "2025-12-10",
         "dayOfWeek": 3,
         "type": "Instructional",
+        "dayOrder": 3,
         "note": null
       },
       {
         "date": "2025-12-11",
         "dayOfWeek": 4,
         "type": "Instructional",
+        "dayOrder": 4,
         "note": null
       },
       {
         "date": "2025-12-12",
         "dayOfWeek": 5,
         "type": "Instructional",
+        "dayOrder": 5,
         "note": null
       },
       {
         "date": "2025-12-13",
         "dayOfWeek": 6,
         "type": "Instructional",
-        "note": "Thursday Order"
+        "dayOrder": 4,
+        "note": null
       },
       {
         "date": "2025-12-14",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2025-12-15",
         "dayOfWeek": 1,
         "type": "Instructional",
+        "dayOrder": 1,
         "note": null
       },
       {
         "date": "2025-12-16",
         "dayOfWeek": 2,
         "type": "Instructional",
+        "dayOrder": 2,
         "note": null
       },
       {
         "date": "2025-12-17",
         "dayOfWeek": 3,
         "type": "Instructional",
+        "dayOrder": 3,
         "note": null
       },
       {
         "date": "2025-12-18",
         "dayOfWeek": 4,
         "type": "Instructional",
+        "dayOrder": 4,
         "note": null
       },
       {
         "date": "2025-12-19",
         "dayOfWeek": 5,
         "type": "Instructional",
+        "dayOrder": 5,
         "note": null
       },
       {
         "date": "2025-12-20",
         "dayOfWeek": 6,
         "type": "Instructional",
-        "note": "Wednesday Order"
+        "dayOrder": 3,
+        "note": null
       },
       {
         "date": "2025-12-21",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Winter Vacation"
       },
       {
         "date": "2025-12-22",
         "dayOfWeek": 1,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Winter Vacation"
       },
       {
         "date": "2025-12-23",
         "dayOfWeek": 2,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Winter Vacation"
       },
       {
         "date": "2025-12-24",
         "dayOfWeek": 3,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Winter Vacation"
       },
       {
         "date": "2025-12-25",
         "dayOfWeek": 4,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Winter Vacation"
       },
       {
         "date": "2025-12-26",
         "dayOfWeek": 5,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Winter Vacation"
       },
       {
         "date": "2025-12-27",
         "dayOfWeek": 6,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Winter Vacation"
       },
       {
         "date": "2025-12-28",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Winter Vacation"
       },
       {
         "date": "2025-12-29",
         "dayOfWeek": 1,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Winter Vacation"
       },
       {
         "date": "2025-12-30",
         "dayOfWeek": 2,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Winter Vacation"
       },
       {
         "date": "2025-12-31",
         "dayOfWeek": 3,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Winter Vacation"
       }
     ],
@@ -199,187 +233,218 @@
         "date": "2026-01-01",
         "dayOfWeek": 4,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Winter Vacation"
       },
       {
         "date": "2026-01-02",
         "dayOfWeek": 5,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Winter Vacation"
       },
       {
         "date": "2026-01-03",
         "dayOfWeek": 6,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Winter Vacation"
       },
       {
         "date": "2026-01-04",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Winter Vacation"
       },
       {
         "date": "2026-01-05",
         "dayOfWeek": 1,
         "type": "Instructional",
+        "dayOrder": 1,
         "note": null
       },
       {
         "date": "2026-01-06",
         "dayOfWeek": 2,
         "type": "Instructional",
+        "dayOrder": 2,
         "note": null
       },
       {
         "date": "2026-01-07",
         "dayOfWeek": 3,
         "type": "Instructional",
+        "dayOrder": 3,
         "note": null
       },
       {
         "date": "2026-01-08",
         "dayOfWeek": 4,
         "type": "Instructional",
+        "dayOrder": 4,
         "note": null
       },
       {
         "date": "2026-01-09",
         "dayOfWeek": 5,
         "type": "Instructional",
+        "dayOrder": 5,
         "note": null
       },
       {
         "date": "2026-01-10",
         "dayOfWeek": 6,
         "type": "Instructional",
-        "note": "Thursday Order"
+        "dayOrder": 4,
+        "note": null
       },
       {
         "date": "2026-01-11",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2026-01-12",
         "dayOfWeek": 1,
         "type": "Instructional",
+        "dayOrder": 1,
         "note": null
       },
       {
         "date": "2026-01-13",
         "dayOfWeek": 2,
         "type": "Instructional",
+        "dayOrder": 2,
         "note": null
       },
       {
         "date": "2026-01-14",
         "dayOfWeek": 3,
         "type": "Instructional",
+        "dayOrder": 3,
         "note": null
       },
       {
         "date": "2026-01-15",
         "dayOfWeek": 4,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Pongal Holidays"
       },
       {
         "date": "2026-01-16",
         "dayOfWeek": 5,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Pongal Holidays"
       },
       {
         "date": "2026-01-17",
         "dayOfWeek": 6,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Pongal Holidays"
       },
       {
         "date": "2026-01-18",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Pongal Holidays"
       },
       {
         "date": "2026-01-19",
         "dayOfWeek": 1,
         "type": "Instructional",
+        "dayOrder": 1,
         "note": null
       },
       {
         "date": "2026-01-20",
         "dayOfWeek": 2,
         "type": "Instructional",
+        "dayOrder": 2,
         "note": null
       },
       {
         "date": "2026-01-21",
         "dayOfWeek": 3,
         "type": "Instructional",
+        "dayOrder": 3,
         "note": null
       },
       {
         "date": "2026-01-22",
         "dayOfWeek": 4,
         "type": "Instructional",
+        "dayOrder": 4,
         "note": null
       },
       {
         "date": "2026-01-23",
         "dayOfWeek": 5,
         "type": "Instructional",
+        "dayOrder": 5,
         "note": null
       },
       {
         "date": "2026-01-24",
         "dayOfWeek": 6,
         "type": "Instructional",
-        "note": "Friday Order"
+        "dayOrder": 5,
+        "note": null
       },
       {
         "date": "2026-01-25",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2026-01-26",
         "dayOfWeek": 1,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Republic Day"
       },
       {
         "date": "2026-01-27",
         "dayOfWeek": 2,
         "type": "CAT-1",
-        "note": "Exam Day"
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-01-28",
         "dayOfWeek": 3,
         "type": "CAT-1",
-        "note": "Exam Day"
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-01-29",
         "dayOfWeek": 4,
         "type": "CAT-1",
-        "note": "Exam Day"
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-01-30",
         "dayOfWeek": 5,
         "type": "CAT-1",
-        "note": "Exam Day"
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-01-31",
         "dayOfWeek": 6,
         "type": "CAT-1",
-        "note": "Exam Day"
+        "dayOrder": 0,
+        "note": null
       }
     ],
     "2026-02": [
@@ -387,168 +452,196 @@
         "date": "2026-02-01",
         "dayOfWeek": 7,
         "type": "CAT-1",
-        "note": "Exam Day"
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-02-02",
         "dayOfWeek": 1,
         "type": "CAT-1",
-        "note": "Exam Day"
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-02-03",
         "dayOfWeek": 2,
         "type": "Instructional",
+        "dayOrder": 2,
         "note": null
       },
       {
         "date": "2026-02-04",
         "dayOfWeek": 3,
         "type": "Instructional",
+        "dayOrder": 3,
         "note": null
       },
       {
         "date": "2026-02-05",
         "dayOfWeek": 4,
         "type": "Instructional",
+        "dayOrder": 4,
         "note": null
       },
       {
         "date": "2026-02-06",
         "dayOfWeek": 5,
         "type": "Instructional",
+        "dayOrder": 5,
         "note": null
       },
       {
         "date": "2026-02-07",
         "dayOfWeek": 6,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2026-02-08",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2026-02-09",
         "dayOfWeek": 1,
         "type": "Instructional",
+        "dayOrder": 1,
         "note": null
       },
       {
         "date": "2026-02-10",
         "dayOfWeek": 2,
         "type": "Instructional",
+        "dayOrder": 2,
         "note": null
       },
       {
         "date": "2026-02-11",
         "dayOfWeek": 3,
         "type": "Instructional",
+        "dayOrder": 3,
         "note": null
       },
       {
         "date": "2026-02-12",
         "dayOfWeek": 4,
         "type": "Instructional",
+        "dayOrder": 4,
         "note": null
       },
       {
         "date": "2026-02-13",
         "dayOfWeek": 5,
         "type": "Instructional",
+        "dayOrder": 5,
         "note": null
       },
       {
         "date": "2026-02-14",
         "dayOfWeek": 6,
         "type": "Instructional",
-        "note": "Monday Order"
+        "dayOrder": 1,
+        "note": null
       },
       {
         "date": "2026-02-15",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2026-02-16",
         "dayOfWeek": 1,
         "type": "Instructional",
+        "dayOrder": 1,
         "note": null
       },
       {
         "date": "2026-02-17",
         "dayOfWeek": 2,
         "type": "Instructional",
+        "dayOrder": 2,
         "note": null
       },
       {
         "date": "2026-02-18",
         "dayOfWeek": 3,
         "type": "Instructional",
+        "dayOrder": 3,
         "note": null
       },
       {
         "date": "2026-02-19",
         "dayOfWeek": 4,
         "type": "Instructional",
+        "dayOrder": 4,
         "note": null
       },
       {
         "date": "2026-02-20",
         "dayOfWeek": 5,
         "type": "Instructional",
+        "dayOrder": 5,
         "note": null
       },
       {
         "date": "2026-02-21",
         "dayOfWeek": 6,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2026-02-22",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2026-02-23",
         "dayOfWeek": 1,
         "type": "Instructional",
+        "dayOrder": 1,
         "note": null
       },
       {
         "date": "2026-02-24",
         "dayOfWeek": 2,
         "type": "Instructional",
+        "dayOrder": 2,
         "note": null
       },
       {
         "date": "2026-02-25",
         "dayOfWeek": 3,
         "type": "Instructional",
+        "dayOrder": 3,
         "note": null
       },
       {
         "date": "2026-02-26",
         "dayOfWeek": 4,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Riviera 2026"
       },
       {
         "date": "2026-02-27",
         "dayOfWeek": 5,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Riviera 2026"
       },
       {
         "date": "2026-02-28",
         "dayOfWeek": 6,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Riviera 2026"
       }
     ],
@@ -557,186 +650,217 @@
         "date": "2026-03-01",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Riviera 2026"
       },
       {
         "date": "2026-03-02",
         "dayOfWeek": 1,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2026-03-03",
         "dayOfWeek": 2,
         "type": "Instructional",
+        "dayOrder": 2,
         "note": null
       },
       {
         "date": "2026-03-04",
         "dayOfWeek": 3,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Holi"
       },
       {
         "date": "2026-03-05",
         "dayOfWeek": 4,
         "type": "Instructional",
+        "dayOrder": 4,
         "note": null
       },
       {
         "date": "2026-03-06",
         "dayOfWeek": 5,
         "type": "Instructional",
+        "dayOrder": 5,
         "note": null
       },
       {
         "date": "2026-03-07",
         "dayOfWeek": 6,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2026-03-08",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2026-03-09",
         "dayOfWeek": 1,
         "type": "Instructional",
+        "dayOrder": 1,
         "note": null
       },
       {
         "date": "2026-03-10",
         "dayOfWeek": 2,
         "type": "Instructional",
+        "dayOrder": 2,
         "note": null
       },
       {
         "date": "2026-03-11",
         "dayOfWeek": 3,
         "type": "Instructional",
+        "dayOrder": 3,
         "note": null
       },
       {
         "date": "2026-03-12",
         "dayOfWeek": 4,
         "type": "Instructional",
+        "dayOrder": 4,
         "note": null
       },
       {
         "date": "2026-03-13",
         "dayOfWeek": 5,
         "type": "Instructional",
+        "dayOrder": 5,
         "note": null
       },
       {
         "date": "2026-03-14",
         "dayOfWeek": 6,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2026-03-15",
         "dayOfWeek": 7,
         "type": "CAT-2",
-        "note": "Exam Day"
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-03-16",
         "dayOfWeek": 1,
         "type": "CAT-2",
-        "note": "Exam Day"
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-03-17",
         "dayOfWeek": 2,
         "type": "CAT-2",
-        "note": "Exam Day"
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-03-18",
         "dayOfWeek": 3,
         "type": "CAT-2",
-        "note": "Exam Day"
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-03-19",
         "dayOfWeek": 4,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Telugu New Year’s Day"
       },
       {
         "date": "2026-03-20",
         "dayOfWeek": 5,
         "type": "CAT-2",
-        "note": "Exam Day"
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-03-21",
         "dayOfWeek": 6,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Ramzan"
       },
       {
         "date": "2026-03-22",
         "dayOfWeek": 7,
         "type": "CAT-2",
-        "note": "Exam Day"
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-03-23",
         "dayOfWeek": 1,
         "type": "CAT-2",
-        "note": "Exam Day"
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-03-24",
         "dayOfWeek": 2,
         "type": "Instructional",
+        "dayOrder": 2,
         "note": null
       },
       {
         "date": "2026-03-25",
         "dayOfWeek": 3,
         "type": "Instructional",
+        "dayOrder": 3,
         "note": null
       },
       {
         "date": "2026-03-26",
         "dayOfWeek": 4,
         "type": "Instructional",
+        "dayOrder": 4,
         "note": null
       },
       {
         "date": "2026-03-27",
         "dayOfWeek": 5,
         "type": "Instructional",
+        "dayOrder": 5,
         "note": null
       },
       {
         "date": "2026-03-28",
         "dayOfWeek": 6,
         "type": "Instructional",
-        "note": "Friday Order"
+        "dayOrder": 5,
+        "note": null
       },
       {
         "date": "2026-03-29",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2026-03-30",
         "dayOfWeek": 1,
         "type": "Instructional",
+        "dayOrder": 1,
         "note": null
       },
       {
         "date": "2026-03-31",
         "dayOfWeek": 2,
         "type": "Instructional",
+        "dayOrder": 2,
         "note": null
       }
     ],
@@ -745,181 +869,211 @@
         "date": "2026-04-01",
         "dayOfWeek": 3,
         "type": "Instructional",
+        "dayOrder": 3,
         "note": null
       },
       {
         "date": "2026-04-02",
         "dayOfWeek": 4,
         "type": "Instructional",
+        "dayOrder": 4,
         "note": null
       },
       {
         "date": "2026-04-03",
         "dayOfWeek": 5,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Good Friday"
       },
       {
         "date": "2026-04-04",
         "dayOfWeek": 6,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2026-04-05",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2026-04-06",
         "dayOfWeek": 1,
         "type": "Instructional",
+        "dayOrder": 1,
         "note": null
       },
       {
         "date": "2026-04-07",
         "dayOfWeek": 2,
         "type": "Instructional",
+        "dayOrder": 2,
         "note": null
       },
       {
         "date": "2026-04-08",
         "dayOfWeek": 3,
         "type": "Instructional",
+        "dayOrder": 3,
         "note": null
       },
       {
         "date": "2026-04-09",
         "dayOfWeek": 4,
         "type": "Instructional",
+        "dayOrder": 4,
         "note": null
       },
       {
         "date": "2026-04-10",
         "dayOfWeek": 5,
         "type": "Instructional",
-        "note": "Last Instructional Day for Laboratory Classes"
+        "dayOrder": 5,
+        "note": "Last Lab Instructional Day"
       },
       {
         "date": "2026-04-11",
         "dayOfWeek": 6,
         "type": "Instructional",
-        "note": "Tuesday Order"
+        "dayOrder": 2,
+        "note": null
       },
       {
         "date": "2026-04-12",
         "dayOfWeek": 7,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": null
       },
       {
         "date": "2026-04-13",
         "dayOfWeek": 1,
         "type": "Instructional",
+        "dayOrder": 1,
         "note": null
       },
       {
         "date": "2026-04-14",
         "dayOfWeek": 2,
         "type": "Holiday",
+        "dayOrder": 0,
         "note": "Tamil New Year’s Day"
       },
       {
         "date": "2026-04-15",
         "dayOfWeek": 3,
         "type": "Instructional",
+        "dayOrder": 3,
         "note": null
       },
       {
         "date": "2026-04-16",
         "dayOfWeek": 4,
         "type": "Instructional",
+        "dayOrder": 4,
         "note": null
       },
       {
         "date": "2026-04-17",
         "dayOfWeek": 5,
         "type": "Instructional",
-        "note": "Last Instructional Day for Theory Classes"
+        "dayOrder": 5,
+        "note": "Last Theory Instructional Day"
       },
       {
         "date": "2026-04-18",
         "dayOfWeek": 6,
-        "type": null,
-        "note": "FAT Exams (Refer to schedule)"
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-04-19",
         "dayOfWeek": 7,
-        "type": null,
-        "note": "FAT Exams (Refer to schedule)"
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-04-20",
         "dayOfWeek": 1,
-        "type": null,
-        "note": "FAT Exams (Refer to schedule)"
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-04-21",
         "dayOfWeek": 2,
-        "type": null,
-        "note": "FAT Exams (Refer to schedule)"
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-04-22",
         "dayOfWeek": 3,
-        "type": null,
-        "note": "FAT Exams (Refer to schedule)"
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-04-23",
         "dayOfWeek": 4,
-        "type": null,
-        "note": "FAT Exams (Refer to schedule)"
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-04-24",
         "dayOfWeek": 5,
-        "type": null,
-        "note": "FAT Exams (Refer to schedule)"
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-04-25",
         "dayOfWeek": 6,
-        "type": null,
-        "note": "FAT Exams (Refer to schedule)"
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-04-26",
         "dayOfWeek": 7,
-        "type": null,
-        "note": "FAT Exams (Refer to schedule)"
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-04-27",
         "dayOfWeek": 1,
-        "type": null,
-        "note": "FAT Exams (Refer to schedule)"
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-04-28",
         "dayOfWeek": 2,
-        "type": null,
-        "note": "FAT Exams (Refer to schedule)"
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-04-29",
         "dayOfWeek": 3,
-        "type": null,
-        "note": "FAT Exams (Refer to schedule)"
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
       },
       {
         "date": "2026-04-30",
         "dayOfWeek": 4,
-        "type": null,
-        "note": "FAT Exams (Refer to schedule)"
+        "type": "FAT",
+        "dayOrder": 0,
+        "note": null
       }
     ]
   }

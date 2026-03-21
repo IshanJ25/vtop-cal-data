@@ -4,278 +4,684 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VIT Academic Calendar Visualizer</title>
+  <title>VTOP Calendar Viewer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap"
+    rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f7f6;
-      color: #333;
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 20px;
+      padding: 0;
     }
 
-    .header {
-      text-align: center;
-      margin-bottom: 30px;
+    body {
+      font-family: 'Lato', sans-serif;
+      background: #f5f5f0;
+      color: #222;
+      font-size: 14px;
     }
 
-    .file-upload {
-      text-align: center;
-      margin-bottom: 20px;
-      background: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* ── UPLOAD ── */
+    #upload-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 24px;
     }
 
-    .month-section {
-      background: #fff;
+    h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 26px;
+      color: #111;
+    }
+
+    .drop-zone {
+      border: 2px dashed #aaa;
       border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .month-title {
-      color: #2c3e50;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 10px;
-      margin-top: 0;
-    }
-
-    .calendar-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 10px;
-      margin-top: 15px;
-    }
-
-    .day-header {
+      padding: 48px 80px;
       text-align: center;
-      font-weight: bold;
-      color: #7f8c8d;
-      padding: 10px 0;
-      background: #ecf0f1;
-      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      background: #fff;
+      transition: border-color .2s, background .2s;
     }
 
-    .day-cell {
+    .drop-zone:hover,
+    .drop-zone.drag-over {
+      border-color: #3a7bd5;
+      background: #f0f5ff;
+    }
+
+    .drop-zone input {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .drop-zone p {
+      color: #555;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+
+    /* ── APP ── */
+    #app {
+      display: none;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 16px;
+    }
+
+    .page-header h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 22px;
+    }
+
+    .page-header .sub {
+      color: #666;
+      font-size: 13px;
+    }
+
+    .reset-btn {
+      background: none;
+      border: 1px solid #bbb;
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .reset-btn:hover {
+      border-color: #3a7bd5;
+      color: #3a7bd5;
+    }
+
+    /* ── META / LANDMARKS ── */
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 20px;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .meta-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: #888;
+    }
+
+    .meta-value {
+      font-weight: 700;
+      color: #111;
+    }
+
+    /* ── STATS ── */
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .stat-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       background: #fff;
       border: 1px solid #e0e0e0;
       border-radius: 6px;
-      padding: 10px;
-      min-height: 80px;
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+
+    .stat-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .stat-num {
+      font-weight: 700;
+    }
+
+    /* ── MONTH TABS ── */
+    .month-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 6px 16px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      background: #fff;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #555;
+      transition: all .15s;
+    }
+
+    .tab:hover {
+      border-color: #3a7bd5;
+      color: #3a7bd5;
+    }
+
+    .tab.active {
+      background: #3a7bd5;
+      border-color: #3a7bd5;
+      color: #fff;
+    }
+
+    /* ── LEGEND ── */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 20px;
+      font-size: 12px;
+      color: #555;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      border: 1px solid rgba(0, 0, 0, .12);
+    }
+
+    /* ── CALENDAR ── */
+    .month-grid {
+      display: none;
+    }
+
+    .month-grid.active {
+      display: block;
+    }
+
+    .month-title {
+      font-family: 'Merriweather', serif;
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #111;
+    }
+
+    .week-header {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 3px;
+      margin-bottom: 3px;
+    }
+
+    .week-header span {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: #888;
+      padding: 4px 0;
+    }
+
+    .week-header span:last-child {
+      color: #bbb;
+    }
+
+    /* Sunday */
+
+    .days-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 3px;
+    }
+
+    /* ── DAY CELL ── */
+    .day-cell {
+      min-height: 82px;
+      border-radius: 6px;
+      padding: 8px;
       display: flex;
       flex-direction: column;
-      transition: transform 0.1s;
+      gap: 4px;
+      border: 1px solid transparent;
+      position: relative;
     }
 
-    .day-cell:hover {
-      transform: scale(1.02);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .day-cell.blank {
+    .day-cell.empty {
       background: transparent;
-      border: none;
-      box-shadow: none;
+      pointer-events: none;
     }
 
-    .date-num {
-      font-size: 1.2em;
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #34495e;
+    .t-Instructional {
+      background: #e8f5ee;
+      border-color: #a8d5b8;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 3px 6px;
-      border-radius: 4px;
-      font-size: 0.75em;
-      font-weight: bold;
-      margin-bottom: 5px;
-      align-self: flex-start;
+    .t-Holiday {
+      background: #fff8e6;
+      border-color: #f0d890;
     }
 
-    .note {
-      font-size: 0.8em;
+    .t-CAT-1 {
+      background: #e8f0fd;
+      border-color: #a8c0f0;
+    }
+
+    .t-CAT-2 {
+      background: #f0eaff;
+      border-color: #c0a8f0;
+    }
+
+    .t-FAT {
+      background: #fdecea;
+      border-color: #f0a8a8;
+    }
+
+    .t-null {
+      background: #f8f8f6;
+      border-color: #e8e8e4;
+    }
+
+    .t-null.is-sunday {
+      background: #f2f2f2;
+      border-color: #ddd;
+    }
+
+    .day-num {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1;
+      color: #222;
+    }
+
+    .t-null .day-num {
+      color: #bbb;
+    }
+
+    .is-sunday .day-num {
+      color: #ccc;
+    }
+
+    .day-type {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+
+    .t-Instructional .day-type {
+      color: #2e7d52;
+    }
+
+    .t-Holiday .day-type {
+      color: #a07000;
+    }
+
+    .t-CAT-1 .day-type {
+      color: #1a4fa8;
+    }
+
+    .t-CAT-2 .day-type {
+      color: #6b35cc;
+    }
+
+    .t-FAT .day-type {
+      color: #c0392b;
+    }
+
+    /* Day order pill */
+    .order-pill {
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      font-size: 10px;
+      font-weight: 700;
+      background: #2e7d52;
+      color: #fff;
+      border-radius: 10px;
+      padding: 1px 6px;
+    }
+
+    .day-note {
+      font-size: 11px;
       color: #555;
-      line-height: 1.3;
+      line-height: 1.35;
       margin-top: auto;
-      /* Pushes text to bottom */
     }
 
-    /* Color Coding based on your schema */
-    .type-Instructional {
-      border-left: 5px solid #2ecc71;
-      background-color: #f4fff8;
+    .t-Holiday .day-note {
+      color: #7a5500;
     }
 
-    .type-Instructional .badge {
-      background-color: #2ecc71;
-      color: white;
+    .t-Instructional .day-note {
+      color: #1e6640;
     }
 
-    .type-Holiday {
-      border-left: 5px solid #e74c3c;
-      background-color: #fff6f5;
-      opacity: 0.8;
+    .t-CAT-1 .day-note {
+      color: #1a3a80;
     }
 
-    .type-Holiday .badge {
-      background-color: #e74c3c;
-      color: white;
+    .t-CAT-2 .day-note {
+      color: #4a1a99;
     }
 
-    .type-CAT-1,
-    .type-CAT-2 {
-      border-left: 5px solid #f39c12;
-      background-color: #fffbf2;
+    .t-FAT .day-note {
+      color: #a00000;
     }
 
-    .type-CAT-1 .badge,
-    .type-CAT-2 .badge {
-      background-color: #f39c12;
-      color: white;
-    }
+    @media (max-width: 600px) {
+      .day-cell {
+        min-height: 62px;
+        padding: 5px;
+      }
 
-    .type-Exam {
-      border-left: 5px solid #9b59b6;
-      background-color: #fbf6ff;
-    }
+      .day-num {
+        font-size: 13px;
+      }
 
-    .type-Exam .badge {
-      background-color: #9b59b6;
-      color: white;
-    }
-
-    .type-null {
-      border-left: 5px solid #95a5a6;
-      background-color: #fafafa;
-    }
-
-    .type-null .badge {
-      background-color: #95a5a6;
-      color: white;
+      .day-type,
+      .day-note,
+      .order-pill {
+        font-size: 9px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="header">
-    <h1>VIT Calendar Visualizer</h1>
-    <h3 id="meta-info" style="color: #7f8c8d; font-weight: normal;">Please upload your generated JSON file</h3>
+  <!-- UPLOAD -->
+  <div id="upload-screen">
+    <h1>VTOP Calendar Viewer</h1>
+    <div class="drop-zone" id="drop-zone">
+      <input type="file" id="file-input" accept=".json">
+      <div style="font-size:36px;margin-bottom:12px">📂</div>
+      <strong>Drop your calendar JSON here</strong>
+      <p>or click to browse &middot; Winter.json, Fall.json&hellip;</p>
+    </div>
   </div>
 
-  <div class="file-upload">
-    <label for="jsonUpload" style="font-weight: bold; margin-right: 10px;">Select Calendar JSON:</label>
-    <input type="file" id="jsonUpload" accept=".json">
-  </div>
+  <!-- APP -->
+  <div id="app">
 
-  <div id="calendar-container"></div>
+    <div class="page-header">
+      <div>
+        <h1 id="page-title">Calendar</h1>
+        <div class="sub" id="page-sub"></div>
+      </div>
+      <button class="reset-btn" onclick="resetApp()">↩ Load another</button>
+    </div>
+
+    <div class="meta-row" id="meta-row"></div>
+    <div class="stats-row" id="stats-row"></div>
+
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#e8f5ee;border-color:#a8d5b8"></div> Instructional
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#fff8e6;border-color:#f0d890"></div> Holiday
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#e8f0fd;border-color:#a8c0f0"></div> CAT-1
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#f0eaff;border-color:#c0a8f0"></div> CAT-2
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#fdecea;border-color:#f0a8a8"></div> FAT
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#f8f8f6;border-color:#e8e8e4"></div> Untagged
+      </div>
+      <div class="legend-item">
+        <div
+          style="background:#2e7d52;color:#fff;font-size:10px;font-weight:700;border-radius:10px;padding:1px 7px;line-height:1.6">
+          M</div>
+        &nbsp;Day order (top-right of instructional cells)
+      </div>
+    </div>
+
+    <div class="month-tabs" id="month-tabs"></div>
+    <div id="calendar-wrap"></div>
+
+  </div>
 
   <script>
-    document.getElementById('jsonUpload').addEventListener('change', function (event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          try {
-            const jsonData = JSON.parse(e.target.result);
-            renderCalendar(jsonData);
-          } catch (err) {
-            alert('Error parsing JSON file!');
-            console.error(err);
-          }
-        };
-        reader.readAsText(file);
-      }
+    const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'];
+    // Week starts Monday
+    const WEEK_DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    // dayOfWeek in JSON: 1=Mon…5=Fri, 6=Sat, 7=Sun
+    const ORDER_INIT = { 1: 'M', 2: 'T', 3: 'W', 4: 'Th', 5: 'F' };
+
+    const TYPE_COLOR = {
+      Instructional: { bg: '#e8f5ee', border: '#a8d5b8', text: '#2e7d52' },
+      Holiday: { bg: '#fff8e6', border: '#f0d890', text: '#a07000' },
+      'CAT-1': { bg: '#e8f0fd', border: '#a8c0f0', text: '#1a4fa8' },
+      'CAT-2': { bg: '#f0eaff', border: '#c0a8f0', text: '#6b35cc' },
+      FAT: { bg: '#fdecea', border: '#f0a8a8', text: '#c0392b' },
+    };
+
+    // ── File handling ──────────────────────────────────────────
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+
+    dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+    dropZone.addEventListener('drop', e => {
+      e.preventDefault(); dropZone.classList.remove('drag-over');
+      if (e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0]);
     });
+    fileInput.addEventListener('change', () => { if (fileInput.files[0]) loadFile(fileInput.files[0]); });
 
-    function renderCalendar(dataObj) {
-      const container = document.getElementById('calendar-container');
-      container.innerHTML = '';
+    function loadFile(file) {
+      const r = new FileReader();
+      r.onload = e => {
+        try { render(JSON.parse(e.target.result)); }
+        catch (err) { alert('Cannot parse JSON: ' + err.message); }
+      };
+      r.readAsText(file);
+    }
 
-      // Handle Metadata
-      const meta = dataObj.metadata;
-      document.getElementById('meta-info').innerHTML =
-        `<b>${meta.semester} Semester ${meta.year}</b> &nbsp;|&nbsp; Total Instructional Days: <b style="color:#2ecc71;">${meta.totalInstructionalDays}</b>`;
+    function resetApp() {
+      document.getElementById('upload-screen').style.display = 'flex';
+      document.getElementById('app').style.display = 'none';
+      fileInput.value = '';
+    }
 
-      const months = Object.keys(dataObj.data);
+    // ── Render ─────────────────────────────────────────────────
+    function render(json) {
+      const meta = json.metadata || {};
+      const data = json.data || {};
 
-      months.forEach(monthKey => {
-        const monthData = dataObj.data[monthKey];
+      document.getElementById('upload-screen').style.display = 'none';
+      document.getElementById('app').style.display = 'block';
 
-        const section = document.createElement('div');
-        section.className = 'month-section';
+      document.getElementById('page-title').textContent =
+        [meta.semester, meta.year].filter(Boolean).join(' ') + ' — Academic Calendar';
+      document.getElementById('page-sub').textContent = meta.generatedAt
+        ? 'Generated ' + new Date(meta.generatedAt).toLocaleString('en-IN',
+          { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })
+        : '';
 
-        // Format "2025-12" to "December 2025"
-        const dateObj = new Date(monthKey + "-01");
-        const monthName = dateObj.toLocaleString('default', { month: 'long', year: 'numeric' });
+      // Meta row — only fields present in metadata
+      const metaDefs = [
+        ['Semester', [meta.semester, meta.year].filter(Boolean).join(' ')],
+        ['Instructional Days', meta.totalInstructionalDays],
+        ['First Instructional', fmtDate(meta.firstInstructionalDay)],
+        ['Last Theory Day', fmtDate(meta.lastTheoryInstructionalDay)],
+        ['Last Lab Day', fmtDate(meta.lastLabInstructionalDay)],
+      ];
+      document.getElementById('meta-row').innerHTML = metaDefs
+        .filter(([, v]) => v != null && v !== '' && v !== '—')
+        .map(([l, v]) => `
+      <div class="meta-item">
+        <span class="meta-label">${l}</span>
+        <span class="meta-value">${v}</span>
+      </div>`).join('');
 
-        const title = document.createElement('h2');
-        title.className = 'month-title';
-        title.innerText = monthName;
-        section.appendChild(title);
+      // Stats — count types directly from JSON entries
+      const allDays = Object.values(data).flat();
+      const counts = {};
+      for (const d of allDays) if (d.type) counts[d.type] = (counts[d.type] || 0) + 1;
+
+      document.getElementById('stats-row').innerHTML = Object.entries(counts)
+        .map(([type, n]) => {
+          const c = TYPE_COLOR[type] || { bg: '#eee', border: '#ccc', text: '#666' };
+          return `<div class="stat-chip">
+        <div class="stat-dot" style="background:${c.bg};border:1.5px solid ${c.border}"></div>
+        <span class="stat-num" style="color:${c.text}">${n}</span>
+        <span style="color:#666">${type}</span>
+      </div>`;
+        }).join('');
+
+      // Landmark dates
+      const landmarks = {};
+      if (meta.firstInstructionalDay)
+        landmarks[meta.firstInstructionalDay] = 'First Instructional Day';
+      if (meta.lastTheoryInstructionalDay)
+        landmarks[meta.lastTheoryInstructionalDay] = 'Last Theory Instructional Day';
+      if (meta.lastLabInstructionalDay)
+        landmarks[meta.lastLabInstructionalDay] = 'Last Lab Instructional Day';
+
+      // Month tabs + grids
+      const months = Object.keys(data).sort();
+      const tabsEl = document.getElementById('month-tabs');
+      const wrapEl = document.getElementById('calendar-wrap');
+      tabsEl.innerHTML = wrapEl.innerHTML = '';
+
+      months.forEach((key, i) => {
+        const [yr, mo] = key.split('-').map(Number);
+
+        const tab = document.createElement('button');
+        tab.className = 'tab' + (i === 0 ? ' active' : '');
+        tab.textContent = MONTHS[mo - 1].slice(0, 3).toUpperCase() + ' ' + yr;
+        tab.dataset.key = key;
+        tab.addEventListener('click', () => activate(key));
+        tabsEl.appendChild(tab);
 
         const grid = document.createElement('div');
-        grid.className = 'calendar-grid';
+        grid.className = 'month-grid' + (i === 0 ? ' active' : '');
+        grid.dataset.key = key;
+        grid.innerHTML = buildMonth(yr, mo, data[key], landmarks);
+        wrapEl.appendChild(grid);
+      });
+    }
 
-        // Render Weekday Headers (Monday to Sunday)
-        const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-        daysOfWeek.forEach(day => {
-          const header = document.createElement('div');
-          header.className = 'day-header';
-          header.innerText = day;
-          grid.appendChild(header);
-        });
+    function activate(key) {
+      document.querySelectorAll('.tab').forEach(t =>
+        t.classList.toggle('active', t.dataset.key === key));
+      document.querySelectorAll('.month-grid').forEach(g =>
+        g.classList.toggle('active', g.dataset.key === key));
+    }
 
-        // Render Blank Cells for Offset
-        // Since ISO dayOfWeek is 1 (Mon) to 7 (Sun), the offset is just dayOfWeek - 1
-        const firstDayOfMonth = monthData[0];
-        const offset = firstDayOfMonth.dayOfWeek - 1;
+    // ── Build one month grid ───────────────────────────────────
+    function buildMonth(yr, mo, days, landmarks) {
+      const byDate = {};
+      for (const d of days) byDate[d.date] = d;
 
-        for (let i = 0; i < offset; i++) {
-          const blank = document.createElement('div');
-          blank.className = 'day-cell blank';
-          grid.appendChild(blank);
+      const daysInMonth = new Date(yr, mo, 0).getDate();
+      // Mon-based column (0=Mon…6=Sun)
+      const jsFirstDow = new Date(yr, mo - 1, 1).getDay(); // 0=Sun
+      const firstCol = (jsFirstDow + 6) % 7;
+
+      let html = `
+    <div class="month-title">${MONTHS[mo - 1]} ${yr}</div>
+    <div class="week-header">${WEEK_DAYS.map(d => `<span>${d}</span>`).join('')}</div>
+    <div class="days-grid">
+  `;
+
+      for (let i = 0; i < firstCol; i++) html += `<div class="day-cell empty"></div>`;
+
+      for (let d = 1; d <= daysInMonth; d++) {
+        const dateStr = `${yr}-${String(mo).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+        const entry = byDate[dateStr];
+        const col = (firstCol + d - 1) % 7; // 0=Mon…6=Sun
+        const isSun = col === 6;
+
+        if (!entry) {
+          html += `<div class="day-cell t-null${isSun ? ' is-sunday' : ''}">
+                 <div class="day-num">${d}</div>
+               </div>`;
+          continue;
         }
 
-        // Render Actual Days
-        monthData.forEach(day => {
-          const cell = document.createElement('div');
+        const type = entry.type || null;
+        const order = entry.dayOrder ?? 0;
+        const note = entry.note || landmarks[dateStr] || null;
+        const isSunEntry = entry.dayOfWeek === 7;
 
-          // Safely grab the type for CSS classes (fallback to null)
-          const typeClass = day.type ? day.type.replace(/\s+/g, '') : 'null';
-          cell.className = `day-cell type-${typeClass}`;
+        const tc = TYPE_COLOR[type];
+        const typeClass = tc ? `t-${type}` : 't-null';
+        const sunClass = isSunEntry ? ' is-sunday' : '';
 
-          const dateNum = day.date.split('-')[2]; // Extracts '05' from '2025-12-05'
+        const orderPill = (type === 'Instructional' && order > 0 && ORDER_INIT[order])
+          ? `<div class="order-pill" title="Day Order: ${ORDER_INIT[order]}">${ORDER_INIT[order]}</div>`
+          : '';
 
-          // Logic to display the cleanest note possible
-          // Tries new "note" first, falls back to "secondaryDetail", then "primaryDetail"
-          let detailText = day.note || day.secondaryDetail || day.primaryDetail || '';
+        const typeLabel = type ? `<div class="day-type">${type}</div>` : '';
+        const noteLine = note ? `<div class="day-note">${note}</div>` : '';
 
-          // Hide redundant words to keep UI clean
-          if (detailText === 'Holiday' || detailText === 'Sunday' || detailText === 'Instructional Day') {
-            detailText = '';
-          }
+        const tooltip = [dateStr, type,
+          (order > 0 ? `Order ${ORDER_INIT[order] || order}` : ''),
+          note].filter(Boolean).join(' · ');
 
-          const displayType = day.type || 'No Event';
+        html += `
+      <div class="day-cell ${typeClass}${sunClass}" title="${tooltip}">
+        ${orderPill}
+        <div class="day-num">${d}</div>
+        ${typeLabel}
+        ${noteLine}
+      </div>`;
+      }
 
-          cell.innerHTML = `
-                        <div class="date-num">${dateNum}</div>
-                        <span class="badge">${displayType}</span>
-                        <div class="note">${detailText}</div>
-                    `;
+      html += '</div>';
+      return html;
+    }
 
-          grid.appendChild(cell);
-        });
-
-        section.appendChild(grid);
-        container.appendChild(section);
-      });
+    function fmtDate(str) {
+      if (!str) return null;
+      const [y, m, d] = str.split('-').map(Number);
+      return `${d} ${MONTHS[m - 1].slice(0, 3)} ${y}`;
     }
   </script>
 </body>

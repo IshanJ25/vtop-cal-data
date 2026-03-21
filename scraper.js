@@ -23,13 +23,155 @@ async function getConfig() {
   return { sem, year };
 }
 
+// ============================================================
+// DAY ORDER MAP
+// ============================================================
+const DAY_ORDER_MAP = {
+  monday: 1, tuesday: 2, wednesday: 3, thursday: 4, friday: 5
+};
+
+// ============================================================
+// LABEL ALIASES
+// Maps known website label variants → canonical form.
+// ============================================================
+const LABEL_ALIASES = {
+  'instruction day': 'Instructional Day',
+  'instructional days': 'Instructional Day',
+  'instructons day': 'Instructional Day',
+  'holidays': 'Holiday',
+  'no instruction day': 'No Instructional Day',
+  'non instructional day': 'No Instructional Day',
+  'no-instructional day': 'No Instructional Day',
+  'cat-i': 'CAT - I',
+  'cat- i': 'CAT - I',
+  'cat -i': 'CAT - I',
+  'cat i': 'CAT - I',
+  'cat1': 'CAT - I',
+  'cat – i': 'CAT - I',
+  'cat-ii': 'CAT - II',
+  'cat- ii': 'CAT - II',
+  'cat -ii': 'CAT - II',
+  'cat ii': 'CAT - II',
+  'cat2': 'CAT - II',
+  'cat – ii': 'CAT - II',
+};
+
+// ============================================================
+// NOTE ALIASES
+// Maps known inconsistent note strings → canonical form.
+// Sources: confirmed variants observed in the HTML calendar
+// data (truncated periods, missing "Day", lowercase, verbose).
+// ============================================================
+const NOTE_ALIASES = {
+  // Day-order notes where the word "Day" is absent (live website bug, e.g. Aug-30)
+  'monday order': 'Monday Day Order',
+  'tuesday order': 'Tuesday Day Order',
+  'wednesday order': 'Wednesday Day Order',
+  'thursday order': 'Thursday Day Order',
+  'friday order': 'Friday Day Order',
+
+  // Last-instructional-day variants (truncation, abbreviation, reordering)
+  'last instructional day for lab.': 'Last Instructional Day for Laboratory Classes',
+  'last instructional day for lab': 'Last Instructional Day for Laboratory Classes',
+  'last instructional day for laboratory': 'Last Instructional Day for Laboratory Classes',
+  'last lab instructional day': 'Last Instructional Day for Laboratory Classes',
+  'last instructional day for laboratory classes': 'Last Instructional Day for Laboratory Classes',
+  'last instructional day for theory': 'Last Instructional Day for Theory Classes',
+  'last theory instructional day': 'Last Instructional Day for Theory Classes',
+  'last instructional day for theory classes': 'Last Instructional Day for Theory Classes',
+
+  // First-day variants
+  'first instruction day': 'First Instructional Day',
+  'first day of instruction': 'First Instructional Day',
+  'first day of instructions': 'First Instructional Day',
+
+  // // FAT commencement verbose form
+  // 'commencement of fat for lab courses / components': 'Commencement of FAT',
+  // 'commencement of fat for lab courses': 'Commencement of FAT',
+  // 'commencement of fat for laboratory courses': 'Commencement of FAT',
+  // 'start of fat': 'Commencement of FAT',
+  // 'fat commencement': 'Commencement of FAT',
+};
+
+function normalizeLabel(raw) {
+  const key = raw.toLowerCase().trim().replace(/\s+/g, ' ');
+  return LABEL_ALIASES[key] || raw.trim();
+}
+
+function normalizeNote(raw) {
+  const key = raw.toLowerCase().trim().replace(/\s+/g, ' ');
+  return NOTE_ALIASES[key] || raw.trim();
+}
+
+// ============================================================
+// parseDay
+// ============================================================
+function parseDay(label, noteRaw, dayOfWeek) {
+  const normLabel = normalizeLabel(label);
+  const normNote = normalizeNote(noteRaw);
+  const labelLower = normLabel.toLowerCase().trim();
+  const noteLower = normNote.toLowerCase().trim();
+
+  if (!labelLower) return { type: null, dayOrder: 0, note: null };
+
+  // --- INSTRUCTIONAL DAY ---
+  if (labelLower === 'instructional day') {
+    let dayOrder;
+
+    // Accepts "Monday Day Order" AND "Monday Order" (website omits "Day" on some entries)
+    const dayOrderMatch = noteLower.match(
+      /^(monday|tuesday|wednesday|thursday|friday)\s+(?:day\s+)?order$/i
+    );
+    if (dayOrderMatch) {
+      dayOrder = DAY_ORDER_MAP[dayOrderMatch[1].toLowerCase()];
+    } else {
+      dayOrder = (dayOfWeek >= 1 && dayOfWeek <= 5) ? dayOfWeek : 0;
+    }
+
+    let note = null;
+    if (/first\s+instructional\s+day/i.test(normNote)) {
+      note = 'First Instructional Day';
+    } else if (/last.*instructional.*day.*lab(?:oratory)?/i.test(normNote)) {
+      note = 'Last Lab Instructional Day';
+    } else if (/last.*instructional.*day.*theory/i.test(normNote)) {
+      note = 'Last Theory Instructional Day';
+      // } else if (/commencement.*fat/i.test(normNote)) {
+      //   note = 'Commencement of FAT';
+    }
+
+    return { type: 'Instructional', dayOrder, note };
+  }
+
+  // --- HOLIDAY ---
+  if (labelLower === 'holiday') {
+    return { type: 'Holiday', dayOrder: 0, note: normNote || null };
+  }
+
+  // --- NO INSTRUCTIONAL DAY ---
+  if (labelLower === 'no instructional day') {
+    return { type: 'Holiday', dayOrder: 0, note: normNote || null };
+  }
+
+  // --- CAT - I ---
+  if (/^cat\s*[-–]\s*i$/i.test(labelLower) || labelLower === 'cat1') {
+    return { type: 'CAT-1', dayOrder: 0, note: null };
+  }
+
+  // --- CAT - II ---
+  if (/^cat\s*[-–]\s*ii$/i.test(labelLower) || labelLower === 'cat2') {
+    return { type: 'CAT-2', dayOrder: 0, note: null };
+  }
+
+  console.warn(`⚠️ Unknown label: "${label}" (normalised: "${normLabel}") — treating as Holiday`);
+  return { type: 'Holiday', dayOrder: 0, note: normNote || label };
+}
+
 async function runScraper() {
   const { sem: targetSemester, year: targetYear } = await getConfig();
   console.log(`\n🎯 TARGET: ${targetSemester} Semester ${targetYear}\n`);
 
   const browser = await puppeteer.launch({
-    headless: true,  // TRUE for GitHub Actions
-    // headless: false,  // FALSE for local debugging
+    headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 
@@ -38,7 +180,6 @@ async function runScraper() {
 
   let loggedIn = false, attempts = 0;
 
-  // --- LOGIN ENGINE ---
   while (!loggedIn && attempts < 15) {
     console.log(`--- Login Attempt ${++attempts} ---`);
     await page.goto('https://vtop.vit.ac.in/vtop/login', { waitUntil: 'networkidle2' });
@@ -102,7 +243,6 @@ async function runScraper() {
 
   if (!loggedIn) throw new Error("Failed to login.");
 
-  // --- NAVIGATION ---
   await sleep(3000);
   await page.evaluate(() => {
     document.querySelector('.bootbox-accept, .modal-footer .btn-primary')?.click();
@@ -126,7 +266,7 @@ async function runScraper() {
   await page.select('#semesterSubId', semesterValue);
   await sleep(1500);
   await page.select('#classGroupId', 'ALL');
-  await sleep(2000); // Wait for the months list to update after selecting 'ALL'
+  await sleep(2000);
   await page.waitForSelector('#getListForSemester a.btn-primary', { timeout: 10000 });
 
   const monthsToFetch = await page.evaluate(() =>
@@ -136,6 +276,7 @@ async function runScraper() {
   );
 
   console.log(`Scraping ${monthsToFetch.length} months...`);
+
   let rawData = [];
 
   for (const monthStr of monthsToFetch) {
@@ -145,101 +286,133 @@ async function runScraper() {
     const monthEvents = await page.evaluate((mStr) => {
       const table = document.querySelector('.calendar-table:last-of-type tbody');
       if (!table) return [];
-      const monthMap = { JAN: '01', FEB: '02', MAR: '03', APR: '04', MAY: '05', JUN: '06', JUL: '07', AUG: '08', SEP: '09', OCT: '10', NOV: '11', DEC: '12' };
-      const [_, mName, year] = mStr.split('-');
+
+      const monthMap = {
+        JAN: '01', FEB: '02', MAR: '03', APR: '04', MAY: '05', JUN: '06',
+        JUL: '07', AUG: '08', SEP: '09', OCT: '10', NOV: '11', DEC: '12'
+      };
+      const parts = mStr.split('-');
+      const mName = parts[1];
+      const year = parts[2];
       const monthNum = monthMap[mName];
-      const isoDayMap = [7, 1, 2, 3, 4, 5, 6]; // Sun=7, Mon=1...
 
-      let events = [];
+      const colDayOfWeek = [7, 1, 2, 3, 4, 5, 6];
+
+      const events = [];
       table.querySelectorAll('td').forEach((col, idx) => {
-        const text = col.innerText.trim();
-        if (!text) return;
-        const dateMatch = text.match(/^(\d+)/);
-        if (!dateMatch) return;
+        const allSpans = Array.from(col.querySelectorAll('span'));
+        if (!allSpans.length) return;
 
-        const dayNum = dateMatch[1];
-        const noteText = Array.from(col.querySelectorAll('span'))
-          .slice(1).map(s => s.innerText.trim()).filter(t => t).join(' ') || text.replace(/^\d+/, '').trim();
+        const dateText = allSpans[0].innerText.trim();
+        if (!dateText || !/^\d+$/.test(dateText)) return;
 
-        events.push({
-          date: `${year}-${monthNum}-${dayNum.padStart(2, '0')}`,
-          dayOfWeek: isoDayMap[idx % 7],
-          rawDetails: noteText || null
-        });
+        const dayNum = dateText.padStart(2, '0');
+        const date = `${year}-${monthNum}-${dayNum}`;
+        const dayOfWeek = colDayOfWeek[idx % 7];
+
+        const labelSpan = allSpans.slice(1).find(s => s.innerText.trim() !== '');
+        const label = labelSpan ? labelSpan.innerText.trim() : '';
+
+        let noteRaw = '';
+        if (labelSpan) {
+          let sibling = labelSpan.nextElementSibling;
+          while (sibling && sibling.tagName !== 'SPAN') sibling = sibling.nextElementSibling;
+          if (sibling) {
+            noteRaw = sibling.innerText.replace(/^\s*\(|\)\s*$/g, '').trim();
+          }
+        }
+
+        events.push({ date, dayOfWeek, label, noteRaw });
       });
+
       return events;
     }, monthStr);
+
     rawData.push(...monthEvents);
+    console.log(`  → ${monthStr}: ${monthEvents.length} days scraped`);
   }
+
   await browser.close();
 
-  // ==========================================
-  // 🚀 CLEANING & RESTRUCTURING ENGINE
-  // ==========================================
-  console.log("Restructuring into strict schema...");
+  // ============================================================
+  // CLASSIFY
+  // ============================================================
+  console.log("Classifying days...");
   rawData.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-  const firstDate = new Date(`${rawData[0].date}T00:00:00Z`);
-  const lastDate = new Date(`${rawData[rawData.length - 1].date}T00:00:00Z`);
-  const lastInstrDate = new Date(rawData.filter(e => e.rawDetails?.toLowerCase().includes('instructional') && !e.rawDetails?.toLowerCase().includes('no instructional')).pop()?.date + "T00:00:00Z");
+  const classified = rawData.map(d => {
+    const { type, dayOrder, note } = parseDay(d.label, d.noteRaw, d.dayOfWeek);
+    return { date: d.date, dayOfWeek: d.dayOfWeek, type, dayOrder, note };
+  });
 
-  let finalContiguousData = [];
-  let prevHolidayNote = null;
-  let totalInstructional = 0;
-  let curr = new Date(firstDate);
+  // ============================================================
+  // FAT BOUNDARY
+  // Derived directly from the last Instructional-type day in the
+  // classified data — intentionally does NOT depend on note text,
+  // so it works even when the website omits or misspells the
+  // "Last Instructional Day" note entirely.
+  // ============================================================
+  const instructionalDates = classified
+    .filter(d => d.type === 'Instructional')
+    .map(d => d.date)
+    .sort();
 
-  while (curr <= lastDate) {
-    const dStr = curr.toISOString().split('T')[0];
-    const jsDay = curr.getUTCDay() || 7;
-    const existing = rawData.find(x => x.date === dStr);
+  const lastInstrDate = instructionalDates[instructionalDates.length - 1] || null;
+  const firstInstrDate = instructionalDates[0] || null;
 
-    let type = null, note = null, raw = existing?.rawDetails || "";
-    let rawLower = raw.toLowerCase();
+  console.log(`  First Instructional : ${firstInstrDate}`);
+  console.log(`  Last Instructional  : ${lastInstrDate}`);
 
-    // 1. Classification
-    if (rawLower.includes('cat - ii') || rawLower.includes('cat 2')) type = 'CAT-2';
-    else if (rawLower.includes('cat - i') || rawLower.includes('cat 1')) type = 'CAT-1';
-    else if (rawLower.includes('instructional') && !rawLower.includes('no instructional')) {
-      type = 'Instructional';
-      totalInstructional++;
-    } else if (raw) type = 'Holiday';
+  // ============================================================
+  // FILL GAPS — Holiday before/within semester, FAT after it
+  // ============================================================
+  const finalData = classified.map(d => {
+    if (d.type !== null) return d;
 
-    // 2. Note Logic
-    if (raw.includes('(')) note = raw.substring(raw.indexOf('(') + 1, raw.lastIndexOf(')')).trim();
-    else if (!['instructional day', 'holiday', 'no instructional day'].includes(rawLower) && raw) note = raw;
-
-    // 3. Holiday Memory (Prevents empty vacation boxes)
-    if (type === 'Holiday' && note && (rawLower.includes('vacation') || rawLower.includes('break') || rawLower.includes('riviera'))) prevHolidayNote = note;
-    else if (type === 'Instructional') prevHolidayNote = null;
-
-    // 4. Fill Empty Box Heuristics
-    if (!type && !note) {
-      if (curr > lastInstrDate) {
-        type = null;
-        note = 'FAT Exams (Refer to schedule)';
-      } else if (prevHolidayNote) {
-        type = 'Holiday';
-        note = prevHolidayNote;
-      } else {
-        type = 'Holiday';
-        if (jsDay === 7) note = null;
-      }
+    if (lastInstrDate && d.date > lastInstrDate) {
+      return { ...d, type: 'FAT', dayOrder: 0, note: null };
     }
 
-    if (note) note = note.replace(/ Day Order/gi, ' Order').trim();
+    return { ...d, type: 'Holiday', dayOrder: 0, note: null };
+  });
 
-    finalContiguousData.push({ date: dStr, dayOfWeek: jsDay, type, note });
-    curr.setUTCDate(curr.getUTCDate() + 1);
+  // ============================================================
+  // METADATA — scan final data for milestone notes and counts
+  // ============================================================
+  let lastTheoryDate = null;
+  let lastLabDate = null;
+  let totalInstructional = 0;
+
+  for (const d of finalData) {
+    if (d.type !== 'Instructional') continue;
+    totalInstructional++;
+    if (d.note === 'Last Theory Instructional Day') lastTheoryDate = d.date;
+    if (d.note === 'Last Lab Instructional Day') lastLabDate = d.date;
   }
+
+  console.log(`  Last Theory         : ${lastTheoryDate}`);
+  console.log(`  Last Lab            : ${lastLabDate}`);
+  console.log(`  Total Instructional : ${totalInstructional}`);
+
+  // ============================================================
+  // OUTPUT
+  // ============================================================
+  const getISTTime = () => {
+    const d = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}::${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}:${String(d.getSeconds()).padStart(2, '0')}`;
+  };
 
   const output = {
     metadata: {
       semester: targetSemester,
       year: targetYear,
-      generatedAt: new Date().toISOString(),
-      totalInstructionalDays: totalInstructional
+      generatedAt: getISTTime(),
+      totalInstructionalDays: totalInstructional,
+      firstInstructionalDay: firstInstrDate,
+      lastTheoryInstructionalDay: lastTheoryDate,
+      lastLabInstructionalDay: lastLabDate,
     },
-    data: finalContiguousData.reduce((acc, day) => {
+    data: finalData.reduce((acc, day) => {
       const month = day.date.substring(0, 7);
       (acc[month] = acc[month] || []).push(day);
       return acc;
@@ -248,8 +421,11 @@ async function runScraper() {
 
   const dirPath = path.join(__dirname, 'calendars', targetYear);
   fs.mkdirSync(dirPath, { recursive: true });
-  fs.writeFileSync(path.join(dirPath, `${targetSemester}.json`), JSON.stringify(output, null, 2));
-  console.log(`✅ Scrape complete: calendars/${targetYear}/${targetSemester}.json`);
+  fs.writeFileSync(
+    path.join(dirPath, `${targetSemester}.json`),
+    JSON.stringify(output, null, 2)
+  );
+  console.log(`\n✅ Scrape complete: calendars/${targetYear}/${targetSemester}.json`);
 }
 
 runScraper().catch(e => console.error("❌ Fatal:", e));
