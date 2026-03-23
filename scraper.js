@@ -11,16 +11,26 @@ const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
 async function getConfig() {
   let sem = 'Winter', year = '2025';
+  let fallback_first_instructional_day = null;
+  let fallback_last_instructional_day_theory = null;
+  let fallback_last_instructional_day_lab = null;
   try {
     const config = fs.readFileSync(path.join(__dirname, 'curr_sem.txt'), 'utf8');
     const semMatch = config.match(/sem\s*=\s*(.+)/);
     const yearMatch = config.match(/year\s*=\s*(.+)/);
+    const firstInstrMatch = config.match(/fallback_first_instructional_day\s*=\s*(.+)/);
+    const lastTheoryMatch = config.match(/fallback_last_instructional_day_theory\s*=\s*(.+)/);
+    const lastLabMatch = config.match(/fallback_last_instructional_day_lab\s*=\s*(.+)/);
+
     if (semMatch) sem = semMatch[1].trim();
     if (yearMatch) year = yearMatch[1].trim();
+    if (firstInstrMatch) fallback_first_instructional_day = firstInstrMatch[1].trim();
+    if (lastTheoryMatch) fallback_last_instructional_day_theory = lastTheoryMatch[1].trim();
+    if (lastLabMatch) fallback_last_instructional_day_lab = lastLabMatch[1].trim();
   } catch {
     console.warn(`⚠️ curr_sem.txt not found. Using defaults.`);
   }
-  return { sem, year };
+  return { sem, year, fallback_first_instructional_day, fallback_last_instructional_day_theory, fallback_last_instructional_day_lab };
 }
 
 // ============================================================
@@ -167,7 +177,13 @@ function parseDay(label, noteRaw, dayOfWeek) {
 }
 
 async function runScraper() {
-  const { sem: targetSemester, year: targetYear } = await getConfig();
+  const {
+    sem: targetSemester,
+    year: targetYear,
+    fallback_first_instructional_day,
+    fallback_last_instructional_day_theory,
+    fallback_last_instructional_day_lab
+  } = await getConfig();
   console.log(`\n🎯 TARGET: ${targetSemester} Semester ${targetYear}\n`);
 
   const browser = await puppeteer.launch({
@@ -358,7 +374,7 @@ async function runScraper() {
     .sort();
 
   const lastInstrDate = instructionalDates[instructionalDates.length - 1] || null;
-  const firstInstrDate = instructionalDates[0] || null;
+  const firstInstrDate = instructionalDates[0] || fallback_first_instructional_day || null;
 
   console.log(`  First Instructional : ${firstInstrDate}`);
   console.log(`  Last Instructional  : ${lastInstrDate}`);
@@ -389,6 +405,9 @@ async function runScraper() {
     if (d.note === 'Last Theory Instructional Day') lastTheoryDate = d.date;
     if (d.note === 'Last Lab Instructional Day') lastLabDate = d.date;
   }
+
+  if (!lastTheoryDate) lastTheoryDate = fallback_last_instructional_day_theory || null;
+  if (!lastLabDate) lastLabDate = fallback_last_instructional_day_lab || null;
 
   console.log(`  Last Theory         : ${lastTheoryDate}`);
   console.log(`  Last Lab            : ${lastLabDate}`);
