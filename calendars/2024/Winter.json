@@ -2,7 +2,7 @@
   "metadata": {
     "semester": "Winter",
     "year": "2024",
-    "generatedAt": "2026-03-21::22:22:09",
+    "generatedAt": "2026-03-31::20:35:09",
     "totalInstructionalDays": 72,
     "firstInstructionalDay": "2024-12-13",
     "lastTheoryInstructionalDay": "2025-04-17",
@@ -897,7 +897,7 @@
         "date": "2025-04-05",
         "dayOfWeek": 6,
         "type": "Instructional",
-        "dayOrder": 0,
+        "dayOrder": 5,
         "note": "Last Lab Instructional Day"
       },
       {

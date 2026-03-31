@@ -129,8 +129,9 @@ function parseDay(label, noteRaw, dayOfWeek) {
     let dayOrder;
 
     // Accepts "Monday Day Order" AND "Monday Order" (website omits "Day" on some entries)
+    // Matches anywhere in the note string to support composite notes like "Last instructional day for lab, Friday Day Order"
     const dayOrderMatch = noteLower.match(
-      /^(monday|tuesday|wednesday|thursday|friday)\s+(?:day\s+)?order$/i
+      /(monday|tuesday|wednesday|thursday|friday)\s+(?:day\s+)?order/i
     );
     if (dayOrderMatch) {
       dayOrder = DAY_ORDER_MAP[dayOrderMatch[1].toLowerCase()];
