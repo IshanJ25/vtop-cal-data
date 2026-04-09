@@ -27,6 +27,7 @@ const SELECTORS = {
   loginError: ".alert-danger, .alert-warning, #loginBox .text-danger, .text-danger",
   loginErrorExtended: ".alert-danger, .alert-warning, #loginBox .text-danger, #loginBox .text-danger:not(i), .text-danger, .help-block, .error-message",
   calendarLink: 'a[data-url="academics/common/CalendarPreview"]',
+  feedbackLink: 'a[href*="endfeedback"]', // Added selector for the mandatory feedback link
   semesterSubId: "#semesterSubId",
   classGroupId: "#classGroupId",
   monthButtons: "#getListForSemester a.btn-primary",
@@ -845,13 +846,29 @@ async function runScraper() {
 
     await sleep(TIMEOUTS.postLogin);
 
+    // Close any popup modals and ensure we can read the DOM normally
     await page.evaluate(() => {
       document.querySelector(".bootbox-accept, .modal-footer .btn-primary")?.click();
-      document.querySelectorAll(".modal-backdrop").forEach(el => el.remove());
-      document.body.classList.remove("modal-open");
+      document.querySelector(".sweet-alert .confirm")?.click(); // Try to close the SweetAlert warning
+      document.querySelectorAll(".modal-backdrop, .sweet-overlay").forEach(el => el.remove());
+      document.body.classList.remove("modal-open", "stop-scrolling");
     });
 
-    await page.waitForSelector(SELECTORS.calendarLink, { timeout: TIMEOUTS.semesterUi });
+    // Wait for EITHER the standard calendar link OR the mandatory feedback screen link
+    try {
+      await page.waitForSelector(`${SELECTORS.calendarLink}, ${SELECTORS.feedbackLink}`, { timeout: TIMEOUTS.semesterUi });
+    } catch (e) {
+      throw new Error("Could not find the calendar menu or the feedback form.");
+    }
+
+    // Check if we hit the feedback intercept page
+    const isFeedbackForced = await page.$(SELECTORS.feedbackLink);
+    if (isFeedbackForced) {
+      logger.warn("Mandatory VTOP Feedback form detected. Menu access is blocked.");
+      logger.info("Scraping halted gracefully. Please complete the feedback manually at https://web.vit.ac.in/endfeedback and try running the script again.");
+      return; // Exit gracefully without throwing an error
+    }
+
     await page.evaluate(calendarLink => document.querySelector(calendarLink)?.click(), SELECTORS.calendarLink);
     await page.waitForSelector(SELECTORS.semesterSubId, { timeout: TIMEOUTS.semesterUi });
 
