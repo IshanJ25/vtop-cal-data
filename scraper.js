@@ -235,8 +235,9 @@ function validateMonthHeader(monthStr, headerText) {
 function classifyCalendar(rawData, fallbackFirst, fallbackLastTheory, fallbackLastLab) {
   rawData.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-  const classified = rawData.map(d => ({ ...d, ...parseDay(d.label, d.noteRaw, d.dayOfWeek) }));
-
+  const classified = rawData.map(({ date, dayOfWeek, label, noteRaw }) => ({
+    date, dayOfWeek, ...parseDay(label, noteRaw, dayOfWeek)
+  }));
   const instrDates = classified.filter(d => d.type === "Instructional").map(d => d.date).sort();
   const firstInstrDate = instrDates[0] || fallbackFirst || null;
   const lastInstrDate = instrDates.at(-1) || null;
