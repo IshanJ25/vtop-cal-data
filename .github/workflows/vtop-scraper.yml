@@ -23,8 +23,9 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          rm -rf ~/.cache/puppeteer
           npm install
-          npx puppeteer browsers install chrome
+          npx puppeteer install
 
       - name: Run Scraper
         env:
