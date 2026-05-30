@@ -25,8 +25,9 @@ jobs:
         env:
           PUPPETEER_CACHE_DIR: ${{ github.workspace }}/.cache/puppeteer
         run: |
-          npm ci
-          npx puppeteer browsers install chrome
+          PUPPETEER_SKIP_DOWNLOAD=true npm ci
+          rm -rf ${{ github.workspace }}/.cache/puppeteer
+          npx puppeteer install
 
       - name: Run Scraper
         env:
