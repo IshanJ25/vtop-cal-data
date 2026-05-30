@@ -22,15 +22,17 @@ jobs:
           node-version: '24'
 
       - name: Install Dependencies
+        env:
+          PUPPETEER_CACHE_DIR: ${{ github.workspace }}/.cache/puppeteer
         run: |
-          rm -rf ~/.cache/puppeteer
-          npm install
-          npx puppeteer install
+          npm ci
+          npx puppeteer browsers install chrome
 
       - name: Run Scraper
         env:
           VTOP_REGNO: ${{ secrets.VTOP_REGNO }}
           VTOP_PASSWORD: ${{ secrets.VTOP_PASSWORD }}
+          PUPPETEER_CACHE_DIR: ${{ github.workspace }}/.cache/puppeteer
         run: node scraper.js
 
       - name: Commit and Push Calendar Data
