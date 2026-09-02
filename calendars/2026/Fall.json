@@ -2,7 +2,7 @@
   "metadata": {
     "semester": "Fall",
     "year": "2026",
-    "generatedAt": "2026-09-02::08:37:43",
+    "generatedAt": "2026-09-02::21:32:39",
     "totalInstructionalDays": 75,
     "firstInstructionalDay": "2026-07-06",
     "lastTheoryInstructionalDay": "2026-11-03",
@@ -626,7 +626,7 @@
       {
         "date": "2026-09-26",
         "dayOfWeek": 6,
-        "type": "Holiday",
+        "type": "CAT-2",
         "dayOrder": 0,
         "note": null
       },
