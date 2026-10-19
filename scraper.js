@@ -110,20 +110,13 @@ const LABEL_ALIASES = {
   "cat-ii": "CAT - II", "cat- ii": "CAT - II", "cat -ii": "CAT - II", "cat ii": "CAT - II", "cat2": "CAT - II", "cat – ii": "CAT - II"
 };
 
-const NOTE_ALIASES = {
-  "monday order": "Monday Day Order", "tuesday order": "Tuesday Day Order", "wednesday order": "Wednesday Day Order",
-  "thursday order": "Thursday Day Order", "friday order": "Friday Day Order",
-  "last instructional day for lab.": "Last Instructional Day for Laboratory Classes",
-  "last instructional day for lab": "Last Instructional Day for Laboratory Classes",
-  "last instructional day for laboratory": "Last Instructional Day for Laboratory Classes",
-  "last lab instructional day": "Last Instructional Day for Laboratory Classes",
-  "last instructional day for laboratory classes": "Last Instructional Day for Laboratory Classes",
-  "last instructional day for theory": "Last Instructional Day for Theory Classes",
-  "last theory instructional day": "Last Instructional Day for Theory Classes",
-  "last instructional day for theory classes": "Last Instructional Day for Theory Classes",
-  "first instruction day": "First Instructional Day", "first day of instruction": "First Instructional Day",
-  "first day of instructions": "First Instructional Day"
-};
+// Landmark notes on an instructional day. Several can share one date (e.g. last theory + last lab),
+// so each is matched independently and all matches are kept, in this order.
+const LANDMARKS = [
+  { key: "first", re: /^(?=.*\bfirst\b)(?=.*instruction)/i, text: "First Instructional Day" },
+  { key: "theory", re: /^(?=.*\blast\b)(?=.*instruction)(?=.*\btheory\b)/i, text: "Last Theory Instructional Day" },
+  { key: "lab", re: /^(?=.*\blast\b)(?=.*instruction)(?=.*\blab)/i, text: "Last Lab Instructional Day" }
+];
 
 const DAY_ORDER_MAP = { monday: 1, tuesday: 2, wednesday: 3, thursday: 4, friday: 5 };
 
@@ -143,40 +136,41 @@ function normalizeLabel(raw) {
   return LABEL_ALIASES[s.toLowerCase()] ?? s;
 }
 
-function normalizeNote(raw) {
-  const s = compact(raw);
-  return NOTE_ALIASES[s.toLowerCase()] ?? s;
+function landmarkNote(found) {
+  const keys = found.map(l => l.key);
+  if (keys.includes("theory") && keys.includes("lab")) return "Last Theory & Lab Instructional Day";
+  return found.map(l => l.text).join(", ") || null;
 }
 
 function parseDay(label, noteRaw, dow) {
   const normLabel = normalizeLabel(label);
-  const normNote = normalizeNote(noteRaw);
+  const note = compact(noteRaw);
   const ll = lower(normLabel);
-  const nl = lower(normNote);
 
-  if (!ll) return { type: null, dayOrder: 0, note: null };
+  if (!ll) return { type: null, dayOrder: 0, note: null, marks: [] };
 
   if (ll === "instructional day") {
-    const match = nl.match(/(monday|tuesday|wednesday|thursday|friday)\s+(?:day\s+)?order/i);
+    const match = note.match(/(monday|tuesday|wednesday|thursday|friday)\s+(?:day\s+)?order/i);
     const dayOrder = match ? DAY_ORDER_MAP[match[1].toLowerCase()] : (dow >= 1 && dow <= 5 ? dow : 0);
-    const note =
-      /first\s+instructional\s+day/i.test(normNote) ? "First Instructional Day" :
-        /last.*instructional.*day.*lab(?:oratory)?/i.test(normNote) ? "Last Lab Instructional Day" :
-          /last.*instructional.*day.*theory/i.test(normNote) ? "Last Theory Instructional Day" : null;
-    return { type: "Instructional", dayOrder, note };
+    const found = LANDMARKS.filter(l => l.re.test(note));
+    return {
+      type: "Instructional", dayOrder,
+      note: landmarkNote(found),
+      marks: found.map(l => l.key)
+    };
   }
 
   if (ll === "holiday" || ll === "no instructional day")
-    return { type: "Holiday", dayOrder: 0, note: normNote || null };
+    return { type: "Holiday", dayOrder: 0, note: note.split(" | ")[0] || null, marks: [] };
 
   if (/^cat\s*[-–]\s*i$/i.test(ll) || ll === "cat1")
-    return { type: "CAT-1", dayOrder: 0, note: null };
+    return { type: "CAT-1", dayOrder: 0, note: null, marks: [] };
 
   if (/^cat\s*[-–]\s*ii$/i.test(ll) || ll === "cat2")
-    return { type: "CAT-2", dayOrder: 0, note: null };
+    return { type: "CAT-2", dayOrder: 0, note: null, marks: [] };
 
   log.warn(`Unknown label "${label}" → treating as Holiday`);
-  return { type: "Holiday", dayOrder: 0, note: normNote || label };
+  return { type: "Holiday", dayOrder: 0, note: note || label, marks: [] };
 }
 
 function parseMonthToken(monthStr) {
@@ -253,14 +247,9 @@ function classifyCalendar(rawData, fallbackFirst, fallbackLastTheory, fallbackLa
   const badInstr = finalData.find(d => d.type === "Instructional" && (d.dayOrder < 1 || d.dayOrder > 5));
   if (badInstr) throw new Error(`Invalid day order on ${badInstr.date}`);
 
-  let totalInstructional = 0, lastTheoryDate = null, lastLabDate = null;
-
-  for (const d of finalData) {
-    if (d.type !== "Instructional") continue;
-    totalInstructional++;
-    if (d.note === "Last Theory Instructional Day") lastTheoryDate = d.date;
-    if (d.note === "Last Lab Instructional Day") lastLabDate = d.date;
-  }
+  const instructional = finalData.filter(d => d.type === "Instructional");
+  const lastMarked = key => instructional.findLast(d => d.marks.includes(key))?.date;
+  const totalInstructional = instructional.length;
 
   if (totalInstructional === 0)
     throw new Error("No instructional days found; aborting.");
@@ -269,8 +258,8 @@ function classifyCalendar(rawData, fallbackFirst, fallbackLastTheory, fallbackLa
     finalData,
     firstInstrDate,
     lastInstrDate,
-    lastTheoryDate: lastTheoryDate ?? fallbackLastTheory ?? null,
-    lastLabDate: lastLabDate ?? fallbackLastLab ?? null,
+    lastTheoryDate: lastMarked("theory") ?? fallbackLastTheory ?? null,
+    lastLabDate: lastMarked("lab") ?? fallbackLastLab ?? null,
     totalInstructional
   };
 }
@@ -287,7 +276,8 @@ function buildOutput(semester, year, finalData, meta) {
     },
     data: finalData.reduce((acc, d) => {
       const month = d.date.slice(0, 7);
-      (acc[month] ??= []).push(d);
+      const { marks, ...entry } = d;
+      (acc[month] ??= []).push(entry);
       return acc;
     }, {})
   };
@@ -528,12 +518,13 @@ async function extractMonthSnapshot(page, monthStr) {
       const labelSpan = spans.slice(1).find(sp => c(sp.innerText));
       const label = labelSpan ? c(labelSpan.innerText) : "";
 
-      let noteRaw = "";
-      if (labelSpan) {
-        let sib = labelSpan.nextElementSibling;
-        while (sib && sib.tagName !== "SPAN") sib = sib.nextElementSibling;
-        if (sib) noteRaw = c(sib.innerText.replace(/^\s*\(|\)\s*$/g, ""));
-      }
+      // Everything after the label span is note text; a day may carry several notes.
+      const noteRaw = labelSpan
+        ? spans.slice(spans.indexOf(labelSpan) + 1)
+          .map(sp => c(sp.innerText.replace(/^\s*\(|\)\s*$/g, "")))
+          .filter(Boolean)
+          .join(" | ")
+        : "";
 
       events.push({
         date: `${year}-${monthNum}-${dateText.padStart(2, "0")}`,

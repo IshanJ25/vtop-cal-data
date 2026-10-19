@@ -3,4 +3,4 @@ sem=Fall
 id=VL20262701
 fallback_first_instructional_day=2026-07-06
 fallback_last_instructional_day_theory=2026-11-03
-fallback_last_instructional_day_lab=2026-10-24
+fallback_last_instructional_day_lab=2026-11-03
